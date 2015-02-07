@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CodeStock</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<nav>
+  <ul>
+    <li><%= link_to 'Home', root_path %></li>
+    <% unless @current_user.present? %>
+      <li><%= link_to 'Sign up', new_user_path %></li>
+      <li><%= link_to 'Log in', login_path %></li>
+    <% end %>
+    <% if  @current_user.present? %>
+      <li><%= link_to 'Sign out ' + @current_user.name, login_path, :method => :delete %></li>
+    <% end %>
+  </ul>
+</nav>
+
+<%= yield %>
+
+</body>
+</html>
