@@ -1,5 +1,7 @@
 <h2>Log in</h2>
 
+
+<p><%= flash[:error] if flash[:error].present? %></p>
 <!-- form_for doesn't work here as we're not creating a form for a particular model
 same as a normal form but gives you the authenticity -->
 
