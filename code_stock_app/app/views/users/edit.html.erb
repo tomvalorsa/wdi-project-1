@@ -1,0 +1,12 @@
+Hey put a form here
+
+<p>Edit <%= @current_user.name %>'s profile:</p>
+<%= form_for @current_user do |f| %>
+  <%= f.label :image %>
+  <%= f.url_field :image %>
+
+  <%= f.label :bio %>
+  <%= f.text_area :bio %>
+
+  <%= f.submit %>
+<% end %>

@@ -1,0 +1,11 @@
+<h1>This is <%= @current_user.name %>'s profile page</h1>
+
+<h2>Info:</h2>
+<%= link_to 'Edit profile', edit_user_path %>
+
+<p>Name: <%= @current_user.name %></p>
+<p>Email: <%= @current_user.email %></p>
+<p>Image:</p>
+<img src="<%= @current_user.image %>" alt="">
+<p>Bio:</p>
+<p><%= @current_user.bio %></p>
