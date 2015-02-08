@@ -1,0 +1,11 @@
+<h1>this is the show lib page for <%= @current_user.name %></h1>
+
+
+<% unless @posts.empty? %>
+  <ul>
+    <% @posts.each do |post| %>
+    <!-- does this need to store a link to the actual post, or a link to another instance of the post which has been saved to the user's library? -->
+      <li><%= link_to post.title, "/posts/#{ post.id }" %></li>
+    <% end %>
+  </ul>
+<% end %>
