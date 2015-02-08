@@ -2,6 +2,8 @@
 
 <ul>
   <% @users.each do |user| %>
-    <li><%= user.name %></li>
+    <!-- need to make profile pages viewable from other users' accounts, namely admin -->
+    <!-- do they need to be static pages? -->
+    <li><%= link_to user.name, "/users/#{ user.id }" %></li>
   <% end %>
 </ul>
