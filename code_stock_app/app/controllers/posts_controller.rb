@@ -15,7 +15,7 @@ class PostsController < ApplicationController
     @post = Post.create post_params
 
     if @post.save
-      @post.user_id = @current_user.id
+      @post.update(:user_id => @current_user.id)
       redirect_to "/posts/#{@post.id}"
     end
   end

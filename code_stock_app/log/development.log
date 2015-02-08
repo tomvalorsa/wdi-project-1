@@ -13793,3 +13793,327 @@ Processing by PagesController#home as HTML
   [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 16]]
   Rendered pages/home.html.erb within layouts/application (0.5ms)
 Completed 200 OK in 77ms (Views: 72.8ms | ActiveRecord: 0.5ms)
+
+
+Started DELETE "/login" for ::1 at 2015-02-08 15:44:26 +1100
+Processing by SessionController#destroy as HTML
+  Parameters: {"authenticity_token"=>"+21gitZHssXFIrg3n5K0RvLNw79aoGvvaU9qITXDsPmORHej6w3sCOw2LKrWPEkyeGF+tAaN7nXTfu9vlqOTxQ=="}
+  [1m[36mUser Load (6.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 16]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 29ms (ActiveRecord: 6.0ms)
+
+
+Started GET "/" for ::1 at 2015-02-08 15:44:27 +1100
+Processing by PagesController#home as HTML
+  Rendered pages/home.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 139ms (Views: 137.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts" for ::1 at 2015-02-08 15:44:28 +1100
+Processing by PostsController#index as HTML
+  [1m[35mPost Load (5.6ms)[0m  SELECT "posts".* FROM "posts"
+  Rendered posts/index.html.erb within layouts/application (11.2ms)
+Completed 200 OK in 119ms (Views: 103.6ms | ActiveRecord: 5.6ms)
+
+
+Started GET "/posts/8" for ::1 at 2015-02-08 15:44:29 +1100
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mPost Load (0.5ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT 1[0m  [["id", 8]]
+  Rendered posts/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 108ms (Views: 102.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2015-02-08 15:44:36 +1100
+Processing by PagesController#home as HTML
+  Rendered pages/home.html.erb within layouts/application (10.5ms)
+Completed 200 OK in 83ms (Views: 82.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2015-02-08 15:47:05 +1100
+Processing by PagesController#home as HTML
+  Rendered pages/home.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 68ms (Views: 67.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2015-02-08 15:47:06 +1100
+Processing by SessionController#new as HTML
+  Rendered session/new.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 72ms (Views: 70.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts" for ::1 at 2015-02-08 15:47:13 +1100
+Processing by PostsController#index as HTML
+  [1m[35mPost Load (0.4ms)[0m  SELECT "posts".* FROM "posts"
+  Rendered posts/index.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 79ms (Views: 77.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/posts/8" for ::1 at 2015-02-08 15:47:14 +1100
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mPost Load (0.4ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT 1[0m  [["id", 8]]
+  Rendered posts/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 82ms (Views: 77.2ms | ActiveRecord: 0.4ms)
+  [1m[35mPost Load (1.7ms)[0m  SELECT "posts".* FROM "posts"
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users"
+  [1m[36m (1.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (3.5ms)[0m  DELETE FROM "users" WHERE "users"."id" = $1  [["id", 16]]
+  [1m[36m (2.7ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 17]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36mPost Load (0.7ms)[0m  [1mSELECT "posts".* FROM "posts"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mDELETE FROM "libraries_posts" WHERE "libraries_posts"."post_id" = $1[0m  [["post_id", 8]]
+  [1m[35mSQL (0.4ms)[0m  DELETE FROM "posts" WHERE "posts"."id" = $1  [["id", 8]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35mLibrary Load (0.5ms)[0m  SELECT "libraries".* FROM "libraries"
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (1.0ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."name" = 'admin' LIMIT 1
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'admin@admin.com' LIMIT 1[0m
+  [1m[35mSQL (4.4ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "is_admin", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["name", "admin"], ["email", "admin@admin.com"], ["password_digest", "$2a$10$Ftq/9bODvIGB4AFYWopmy.IkoY4wJguPcqOMeofZEaqH2uI/qWd8q"], ["is_admin", "t"], ["created_at", "2015-02-08 04:48:52.546724"], ["updated_at", "2015-02-08 04:48:52.546724"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.8ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."name" = 'tom' LIMIT 1[0m
+  [1m[35mUser Exists (0.4ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'tom@tom.com' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("name", "email", "bio", "image", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "tom"], ["email", "tom@tom.com"], ["bio", "Hi my name is Tom and I live in Sydney."], ["image", "https://thechive.files.wordpress.com/2011/02/derp-idiot-13.jpg"], ["password_digest", "$2a$10$IWHtF/zbX2G.rgeekdYMiOz0rsRLHpsW9vRSg/yQsRsrafeD9tMHu"], ["created_at", "2015-02-08 04:48:52.638441"], ["updated_at", "2015-02-08 04:48:52.638441"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+
+
+Started GET "/" for ::1 at 2015-02-08 15:48:55 +1100
+Processing by PagesController#home as HTML
+  Rendered pages/home.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 71ms (Views: 70.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts" for ::1 at 2015-02-08 15:48:56 +1100
+Processing by PostsController#index as HTML
+  [1m[35mPost Load (0.5ms)[0m  SELECT "posts".* FROM "posts"
+  Rendered posts/index.html.erb within layouts/application (7.8ms)
+Completed 200 OK in 78ms (Views: 70.7ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/login" for ::1 at 2015-02-08 15:48:58 +1100
+Processing by SessionController#new as HTML
+  Rendered session/new.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 80ms (Views: 78.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for ::1 at 2015-02-08 15:49:01 +1100
+Processing by SessionController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"lLep5XWKJ/47O7alixDAqsTpdcx6NV/pu/vBKtzqIkbhnr7MSMB5MxIvIjjCvj3eTkXIxyYY2nMBykRkf4oBeg==", "username"=>["tom"], "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[36mUser Load (0.9ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."name" = 'tom' LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 105ms (ActiveRecord: 4.8ms)
+
+
+Started GET "/" for ::1 at 2015-02-08 15:49:01 +1100
+Processing by PagesController#home as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 19]]
+  Rendered pages/home.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 72ms (Views: 67.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/posts/new" for ::1 at 2015-02-08 15:49:03 +1100
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 19]]
+  Rendered posts/_form.html.erb (2.4ms)
+  Rendered posts/new.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 89ms (Views: 77.3ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/posts" for ::1 at 2015-02-08 15:49:08 +1100
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jMsEFCOw4LMWoiDWy5/M4kUvt8j9UuH7fsniHHnj/dj54hM9Hvq+fj+2tEuCMTGWz4MKw6F/ZGHE+GdS2oPe5A==", "post"=>{"title"=>"Tom", "codepen"=>"<p data-height=\"268\" data-theme-id=\"0\" data-slug-hash=\"YPErVE\" data-default-tab=\"result\" data-user=\"tomvalorsa\" class='codepen'>See the Pen <a href='http://codepen.io/tomvalorsa/pen/YPErVE/'>YPErVE</a> by Tom Valorsa (<a href='http://codepen.io/tomvalorsa'>@tomvalorsa</a>) on <a href='http://codepen.io'>CodePen</a>.</p> <script async src=\"//assets.codepen.io/assets/embed/ei.js\"></script>", "description"=>"dfsmfdsf"}, "commit"=>"Create Post"}
+  [1m[35mUser Load (0.7ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 19]]
+  [1m[36m (0.7ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "posts" ("title", "codepen", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["title", "Tom"], ["codepen", "<p data-height=\"268\" data-theme-id=\"0\" data-slug-hash=\"YPErVE\" data-default-tab=\"result\" data-user=\"tomvalorsa\" class='codepen'>See the Pen <a href='http://codepen.io/tomvalorsa/pen/YPErVE/'>YPErVE</a> by Tom Valorsa (<a href='http://codepen.io/tomvalorsa'>@tomvalorsa</a>) on <a href='http://codepen.io'>CodePen</a>.</p> <script async src=\"//assets.codepen.io/assets/embed/ei.js\"></script>"], ["description", "dfsmfdsf"], ["created_at", "2015-02-08 04:49:08.805070"], ["updated_at", "2015-02-08 04:49:08.805070"]]
+  [1m[36m (1.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/posts/9
+Completed 302 Found in 27ms (ActiveRecord: 3.9ms)
+
+
+Started GET "/posts/9" for ::1 at 2015-02-08 15:49:08 +1100
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 19]]
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT 1[0m  [["id", 9]]
+  Rendered posts/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 71ms (Views: 64.8ms | ActiveRecord: 0.7ms)
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mPost Load (0.5ms)[0m  SELECT "posts".* FROM "posts"
+
+
+Started GET "/posts/9" for ::1 at 2015-02-08 15:51:37 +1100
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 19]]
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT 1[0m  [["id", 9]]
+  Rendered posts/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 115ms (Views: 80.6ms | ActiveRecord: 5.8ms)
+
+
+Started GET "/posts/new" for ::1 at 2015-02-08 15:51:39 +1100
+Processing by PostsController#new as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 19]]
+  Rendered posts/_form.html.erb (4.9ms)
+  Rendered posts/new.html.erb within layouts/application (9.0ms)
+Completed 200 OK in 102ms (Views: 96.1ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/posts" for ::1 at 2015-02-08 15:51:43 +1100
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"qCEAphn12RK6airnsoBqZNV/EIIwOWTt28mCQz6HT7rdCBePJL+H35N+vnr7LpcQX9OtiWwU4Xdh+AcNnedshg==", "post"=>{"title"=>"fdsdsf", "codepen"=>"<p data-height=\"268\" data-theme-id=\"0\" data-slug-hash=\"YPErVE\" data-default-tab=\"result\" data-user=\"tomvalorsa\" class='codepen'>See the Pen <a href='http://codepen.io/tomvalorsa/pen/YPErVE/'>YPErVE</a> by Tom Valorsa (<a href='http://codepen.io/tomvalorsa'>@tomvalorsa</a>) on <a href='http://codepen.io'>CodePen</a>.</p> <script async src=\"//assets.codepen.io/assets/embed/ei.js\"></script>", "description"=>"dsfdfsdfsdfds"}, "commit"=>"Create Post"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 19]]
+  [1m[35m (0.5ms)[0m  BEGIN
+  [1m[36mSQL (0.9ms)[0m  [1mINSERT INTO "posts" ("title", "codepen", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "fdsdsf"], ["codepen", "<p data-height=\"268\" data-theme-id=\"0\" data-slug-hash=\"YPErVE\" data-default-tab=\"result\" data-user=\"tomvalorsa\" class='codepen'>See the Pen <a href='http://codepen.io/tomvalorsa/pen/YPErVE/'>YPErVE</a> by Tom Valorsa (<a href='http://codepen.io/tomvalorsa'>@tomvalorsa</a>) on <a href='http://codepen.io'>CodePen</a>.</p> <script async src=\"//assets.codepen.io/assets/embed/ei.js\"></script>"], ["description", "dsfdfsdfsdfds"], ["created_at", "2015-02-08 04:51:43.807604"], ["updated_at", "2015-02-08 04:51:43.807604"]]
+  [1m[35m (1.0ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (1.2ms)[0m  COMMIT
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (1.4ms)[0m  UPDATE "posts" SET "user_id" = $1, "updated_at" = $2 WHERE "posts"."id" = $3  [["user_id", 19], ["updated_at", "2015-02-08 04:51:43.827852"], ["id", 10]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/posts/10
+Completed 302 Found in 36ms (ActiveRecord: 6.3ms)
+
+
+Started GET "/posts/10" for ::1 at 2015-02-08 15:51:43 +1100
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 19]]
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT 1[0m  [["id", 10]]
+  Rendered posts/show.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 80ms (Views: 73.0ms | ActiveRecord: 0.5ms)
+
+
+Started DELETE "/login" for ::1 at 2015-02-08 15:51:50 +1100
+Processing by SessionController#destroy as HTML
+  Parameters: {"authenticity_token"=>"A9tuL6b9HihaNYZjtl3+WOr2xyX7mZ9v97InGOr7dnp28nkGm7dA5XMhEv7/8wMsYFp6Lqe0GvVNg6JWSZtVRg=="}
+  [1m[35mUser Load (0.9ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 19]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 6ms (ActiveRecord: 0.9ms)
+
+
+Started GET "/" for ::1 at 2015-02-08 15:51:50 +1100
+Processing by PagesController#home as HTML
+  Rendered pages/home.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 80ms (Views: 78.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2015-02-08 15:51:53 +1100
+Processing by SessionController#new as HTML
+  Rendered session/new.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 82ms (Views: 81.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for ::1 at 2015-02-08 15:51:56 +1100
+Processing by SessionController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"SGvRLSd/xi9bW+8zsusW91Z/B26jj1YZJa6GLlD3/NE9QsYEGjWY4nJPe677ReuD3NO6Zf+i04OfnwNg85ff7Q==", "username"=>["admin"], "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."name" = 'admin' LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 82ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2015-02-08 15:51:56 +1100
+Processing by PagesController#home as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 18]]
+  Rendered pages/home.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 65ms (Views: 60.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/posts" for ::1 at 2015-02-08 15:51:58 +1100
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 18]]
+  [1m[35mPost Load (0.4ms)[0m  SELECT "posts".* FROM "posts"
+  Rendered posts/index.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 94ms (Views: 89.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/posts/10" for ::1 at 2015-02-08 15:51:59 +1100
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 18]]
+  [1m[35mPost Load (0.4ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT 1  [["id", 10]]
+  Rendered posts/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 77ms (Views: 70.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users/18" for ::1 at 2015-02-08 20:18:17 +1100
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"18"}
+  [1m[36mUser Load (6.8ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 18]]
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 18]]
+  Rendered users/show.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 197ms (Views: 164.1ms | ActiveRecord: 7.2ms)
+
+
+Started DELETE "/login" for ::1 at 2015-02-08 20:18:21 +1100
+Processing by SessionController#destroy as HTML
+  Parameters: {"authenticity_token"=>"yvYWB/GlmeXmtG4J1xOlJ6/eSJYCGouk2oM/LC8KH3u/3wEuzO/HKM+g+pSevVhTJXL1nV43Dj5gsrpijGo8Rw=="}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 18]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 6ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2015-02-08 20:18:21 +1100
+Processing by PagesController#home as HTML
+  Rendered pages/home.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 87ms (Views: 85.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts" for ::1 at 2015-02-08 20:18:22 +1100
+Processing by PostsController#index as HTML
+  [1m[35mPost Load (5.6ms)[0m  SELECT "posts".* FROM "posts"
+  Rendered posts/index.html.erb within layouts/application (8.7ms)
+Completed 200 OK in 89ms (Views: 82.1ms | ActiveRecord: 5.6ms)
+
+
+Started GET "/posts/9" for ::1 at 2015-02-08 20:18:23 +1100
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT 1[0m  [["id", 9]]
+  Rendered posts/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 95ms (Views: 91.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/posts/10" for ::1 at 2015-02-08 20:18:26 +1100
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[35mPost Load (0.3ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT 1  [["id", 10]]
+  Rendered posts/show.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 80ms (Views: 76.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/posts" for ::1 at 2015-02-08 20:18:34 +1100
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.5ms)[0m  [1mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 76ms (Views: 74.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/new" for ::1 at 2015-02-08 20:18:36 +1100
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 81ms (Views: 79.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2015-02-08 20:18:37 +1100
+Processing by SessionController#new as HTML
+  Rendered session/new.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 80ms (Views: 79.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for ::1 at 2015-02-08 20:18:38 +1100
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 84ms (Views: 83.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2015-02-08 20:18:40 +1100
+Processing by PagesController#home as HTML
+  Rendered pages/home.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 78ms (Views: 77.3ms | ActiveRecord: 0.0ms)
