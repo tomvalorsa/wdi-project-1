@@ -2,13 +2,23 @@
 
 <h2><%= @post.title %></h2>
 
-<p><%= @post.codepen %></p>
+<!-- only lets user see the options to edit/delete if they are the author -->
+<% if @current_user.present? && @post.user_id == @current_user.id %>
+  <%= link_to 'Edit post', edit_post_path %>
+  <!-- :method needs to be :delete as this isn't a get request -->
+  <%= link_to 'Delete post', @post, :method => 'delete', :data => {:confirm => 'Are you sure?'} %>
+<% end %>
 
-<p>Author: <%= @post.user_id %></p>
 
-<!-- the above doesn't work. Needs to be pasted in like below
- -->
-<p data-height="268" data-theme-id="0" data-slug-hash="YPErVE" data-default-tab="result" data-user="tomvalorsa" class='codepen'>See the Pen <a href='http://codepen.io/tomvalorsa/pen/YPErVE/'>YPErVE</a> by Tom Valorsa (<a href='http://codepen.io/tomvalorsa'>@tomvalorsa</a>) on <a href='http://codepen.io'>CodePen</a>.</p> <script async src="//assets.codepen.io/assets/embed/ei.js"></script>
+<!-- logic below probably shouldn't be there...fix this -->
+
+<% @author = User.find(@post.user_id) %>
+<p>Author: <%= @author.name %></p>
+
+
+<!-- get the user to paste in the original link, save that for the a, but sub out pen for embed for the iframe src -->
+<iframe height='350' scrolling='no' src='<%= @post.codepen %>' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/tomvalorsa/pen/YPErVE/'>YPErVE</a> by Tom Valorsa (<a href='http://codepen.io/tomvalorsa'>@tomvalorsa</a>) on <a href='http://codepen.io'>CodePen</a>.
+</iframe>
 
 <h2>Description:</h2>
 <p><%= @post.description %></p>
