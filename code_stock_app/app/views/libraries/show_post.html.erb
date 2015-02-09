@@ -1,15 +1,15 @@
 <h2><%= @post.title %></h2>
 
 <% if @current_user.present? && @post.user_id == @current_user.id %>
-  <%= link_to 'Edit post', edit_post_path %>
-  <%= link_to 'Delete post', @post, :method => 'delete', :data => {:confirm => 'This will also remove the post from your library. Are you sure?'} %>
+  <%= link_to 'Edit post', edit_post_path, :class => "btn btn-default" %>
+  <%= link_to 'Delete post', @post, :method => 'delete', :data => {:confirm => 'This will also remove the post from your library. Are you sure?'}, :class => "btn btn-danger" %>
 <% end %>
 
 
 <!-- should redirect back to the library index -->
 <!-- makes sure that a user can't delete a post they've authored from their lib -->
 <% unless @post.user_id == @current_user.id %>
-  <%= link_to 'Remove from library', "/library/posts/#{ @post.id }/remove_from_library", :method => :post %>
+  <%= link_to 'Remove from library', "/library/posts/#{ @post.id }/remove_from_library", :method => :post, :class => "btn btn-default" %>
 <% end %>
 <!-- logic below probably shouldn't be there...fix this -->
 

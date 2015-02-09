@@ -2,18 +2,18 @@
 
 <!-- only lets user see the options to edit/delete if they are the author -->
 <% if @current_user.present? && @post.user_id == @current_user.id %>
-  <%= link_to 'Edit post', edit_post_path %>
+  <%= link_to 'Edit post', edit_post_path, :class => "btn btn-default" %>
   <!-- :method needs to be :delete as this isn't a get request -->
-  <%= link_to 'Delete post', @post, :method => 'delete', :data => {:confirm => 'Are you sure?'} %>
+  <%= link_to 'Delete post', @post, :method => 'delete', :data => {:confirm => 'Are you sure?'}, :class => "btn btn-danger" %>
 <% end %>
 
 
 <% if @current_user.present? && (@post.user_id != @current_user.id) %>
   <% unless @current_user.library.posts.include? @post %>
-    <%= link_to 'Add to library', "/posts/#{ @post.id }/add_to_library", :method => :post %>
+    <%= link_to 'Add to library', "/posts/#{ @post.id }/add_to_library", :method => :post, :class => "btn btn-default"  %>
   <% else %>
   <!-- remove from lib here should redirect to the list of posts (index) -->
-    <%= link_to 'Remove from library', "/posts/#{ @post.id }/remove_from_library", :method => :post %>
+    <%= link_to 'Remove from library', "/posts/#{ @post.id }/remove_from_library", :method => :post, :class => "btn btn-default" %>
   <% end %>
 <% end %>
 
