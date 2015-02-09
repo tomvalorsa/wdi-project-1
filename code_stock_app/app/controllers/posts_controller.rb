@@ -16,6 +16,7 @@ class PostsController < ApplicationController
 
     if @post.save
       @post.update(:user_id => @current_user.id)
+      @current_user.library.posts << @post
       redirect_to "/posts/#{@post.id}"
     end
   end

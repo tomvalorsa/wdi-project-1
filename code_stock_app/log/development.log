@@ -19186,3 +19186,214 @@ Processing by LibrariesController#show as HTML
   [1m[36mPost Load (0.3ms)[0m  [1mSELECT "posts".* FROM "posts" INNER JOIN "libraries_posts" ON "posts"."id" = "libraries_posts"."post_id" WHERE "libraries_posts"."library_id" = $1[0m  [["library_id", 11]]
   Rendered libraries/show.html.erb within layouts/application (6.4ms)
 Completed 200 OK in 97ms (Views: 84.0ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/libraries/31" for ::1 at 2015-02-09 10:59:04 +1100
+Processing by LibrariesController#show as HTML
+  Parameters: {"id"=>"31"}
+  [1m[35mUser Load (5.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 32]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 32]]
+  [1m[35mLibrary Load (0.3ms)[0m  SELECT  "libraries".* FROM "libraries" WHERE "libraries"."user_id" = $1 LIMIT 1  [["user_id", 32]]
+  [1m[36mPost Exists (1.5ms)[0m  [1mSELECT  1 AS one FROM "posts" INNER JOIN "libraries_posts" ON "posts"."id" = "libraries_posts"."post_id" WHERE "libraries_posts"."library_id" = $1 LIMIT 1[0m  [["library_id", 11]]
+  [1m[35mPost Load (1.3ms)[0m  SELECT "posts".* FROM "posts" INNER JOIN "libraries_posts" ON "posts"."id" = "libraries_posts"."post_id" WHERE "libraries_posts"."library_id" = $1  [["library_id", 11]]
+  Rendered libraries/show.html.erb within layouts/application (9.6ms)
+Completed 200 OK in 120ms (Views: 100.8ms | ActiveRecord: 8.2ms)
+
+
+Started GET "/libraries/99" for ::1 at 2015-02-09 10:59:09 +1100
+Processing by LibrariesController#show as HTML
+  Parameters: {"id"=>"99"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 32]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 32]]
+  [1m[36mLibrary Load (0.6ms)[0m  [1mSELECT  "libraries".* FROM "libraries" WHERE "libraries"."user_id" = $1 LIMIT 1[0m  [["user_id", 32]]
+  [1m[35mPost Exists (0.3ms)[0m  SELECT  1 AS one FROM "posts" INNER JOIN "libraries_posts" ON "posts"."id" = "libraries_posts"."post_id" WHERE "libraries_posts"."library_id" = $1 LIMIT 1  [["library_id", 11]]
+  [1m[36mPost Load (0.4ms)[0m  [1mSELECT "posts".* FROM "posts" INNER JOIN "libraries_posts" ON "posts"."id" = "libraries_posts"."post_id" WHERE "libraries_posts"."library_id" = $1[0m  [["library_id", 11]]
+  Rendered libraries/show.html.erb within layouts/application (7.9ms)
+Completed 200 OK in 95ms (Views: 84.3ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/libraries/99" for ::1 at 2015-02-09 10:59:17 +1100
+Processing by LibrariesController#show as HTML
+  Parameters: {"id"=>"99"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 32]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 32]]
+  [1m[35mLibrary Load (0.3ms)[0m  SELECT  "libraries".* FROM "libraries" WHERE "libraries"."user_id" = $1 LIMIT 1  [["user_id", 32]]
+  [1m[36mPost Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "posts" INNER JOIN "libraries_posts" ON "posts"."id" = "libraries_posts"."post_id" WHERE "libraries_posts"."library_id" = $1 LIMIT 1[0m  [["library_id", 11]]
+  [1m[35mPost Load (0.5ms)[0m  SELECT "posts".* FROM "posts" INNER JOIN "libraries_posts" ON "posts"."id" = "libraries_posts"."post_id" WHERE "libraries_posts"."library_id" = $1  [["library_id", 11]]
+  Rendered libraries/show.html.erb within layouts/application (7.3ms)
+Completed 200 OK in 106ms (Views: 85.6ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/libraries/99" for ::1 at 2015-02-09 10:59:18 +1100
+Processing by LibrariesController#show as HTML
+  Parameters: {"id"=>"99"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 32]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 32]]
+  [1m[36mLibrary Load (0.3ms)[0m  [1mSELECT  "libraries".* FROM "libraries" WHERE "libraries"."user_id" = $1 LIMIT 1[0m  [["user_id", 32]]
+  [1m[35mPost Exists (0.3ms)[0m  SELECT  1 AS one FROM "posts" INNER JOIN "libraries_posts" ON "posts"."id" = "libraries_posts"."post_id" WHERE "libraries_posts"."library_id" = $1 LIMIT 1  [["library_id", 11]]
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT "posts".* FROM "posts" INNER JOIN "libraries_posts" ON "posts"."id" = "libraries_posts"."post_id" WHERE "libraries_posts"."library_id" = $1[0m  [["library_id", 11]]
+  Rendered libraries/show.html.erb within layouts/application (7.4ms)
+Completed 200 OK in 103ms (Views: 92.8ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/posts" for ::1 at 2015-02-09 10:59:44 +1100
+Processing by PostsController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 32]]
+  [1m[36mPost Load (5.5ms)[0m  [1mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (8.8ms)
+Completed 200 OK in 107ms (Views: 98.1ms | ActiveRecord: 5.8ms)
+
+
+Started GET "/posts/16" for ::1 at 2015-02-09 10:59:45 +1100
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"16"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 32]]
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT 1[0m  [["id", 16]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 32]]
+  Rendered posts/show.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 115ms (Views: 104.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/posts/16" for ::1 at 2015-02-09 11:03:31 +1100
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 32]]
+  [1m[35mPost Load (0.3ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT 1  [["id", 16]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 32]]
+  Rendered posts/show.html.erb within layouts/application (6.7ms)
+Completed 200 OK in 238ms (Views: 139.8ms | ActiveRecord: 46.5ms)
+
+
+Started GET "/" for ::1 at 2015-02-09 11:03:33 +1100
+Processing by PagesController#home as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 32]]
+  Rendered pages/home.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 94ms (Views: 90.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/posts/new" for ::1 at 2015-02-09 11:03:35 +1100
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 32]]
+  Rendered posts/_form.html.erb (2.3ms)
+  Rendered posts/new.html.erb within layouts/application (6.5ms)
+Completed 200 OK in 89ms (Views: 86.0ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/posts" for ::1 at 2015-02-09 11:03:42 +1100
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ihoTe08Q2nvz7L4MzfuO+wAQkWPj+iiU946T3+lZ4Xt4rp57Jj06+eVzjP9T9Qn/hik4XSmS/yAngmd2GCfVhw==", "post"=>{"title"=>"Test", "codepen"=>"", "description"=>"this is a test"}, "commit"=>"Create Post"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 32]]
+  [1m[36m (0.7ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (2.2ms)[0m  INSERT INTO "posts" ("title", "codepen", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["title", "Test"], ["codepen", ""], ["description", "this is a test"], ["created_at", "2015-02-09 00:03:42.764334"], ["updated_at", "2015-02-09 00:03:42.764334"]]
+  [1m[36m (3.0ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mUPDATE "posts" SET "user_id" = $1, "updated_at" = $2 WHERE "posts"."id" = $3[0m  [["user_id", 32], ["updated_at", "2015-02-09 00:03:42.787277"], ["id", 17]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36mLibrary Load (0.3ms)[0m  [1mSELECT  "libraries".* FROM "libraries" WHERE "libraries"."user_id" = $1 LIMIT 1[0m  [["user_id", 32]]
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (1.1ms)[0m  [1mINSERT INTO "libraries_posts" ("library_id", "post_id") VALUES ($1, $2) RETURNING "id"[0m  [["library_id", 11], ["post_id", 17]]
+  [1m[35m (0.4ms)[0m  COMMIT
+Redirected to http://localhost:3000/posts/17
+Completed 302 Found in 84ms (ActiveRecord: 13.8ms)
+
+
+Started GET "/posts/17" for ::1 at 2015-02-09 11:03:42 +1100
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"17"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 32]]
+  [1m[35mPost Load (0.2ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT 1  [["id", 17]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 32]]
+  Rendered posts/show.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 96ms (Views: 90.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/libraries/32" for ::1 at 2015-02-09 11:03:47 +1100
+Processing by LibrariesController#show as HTML
+  Parameters: {"id"=>"32"}
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 32]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 32]]
+  [1m[35mLibrary Load (0.3ms)[0m  SELECT  "libraries".* FROM "libraries" WHERE "libraries"."user_id" = $1 LIMIT 1  [["user_id", 32]]
+  [1m[36mPost Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "posts" INNER JOIN "libraries_posts" ON "posts"."id" = "libraries_posts"."post_id" WHERE "libraries_posts"."library_id" = $1 LIMIT 1[0m  [["library_id", 11]]
+  [1m[35mPost Load (0.4ms)[0m  SELECT "posts".* FROM "posts" INNER JOIN "libraries_posts" ON "posts"."id" = "libraries_posts"."post_id" WHERE "libraries_posts"."library_id" = $1  [["library_id", 11]]
+  Rendered libraries/show.html.erb within layouts/application (8.9ms)
+Completed 200 OK in 104ms (Views: 93.7ms | ActiveRecord: 1.6ms)
+
+
+Started DELETE "/login" for ::1 at 2015-02-09 11:03:51 +1100
+Processing by SessionController#destroy as HTML
+  Parameters: {"authenticity_token"=>"0O8IYbxslA2NLDbls8IdKF4L/SpKapHRuItwhfMDnjoiW4Vh1UF0j5uzBBYtzJos2DJUFIACRmVoh4QsAn2qxg=="}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 32]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 6ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2015-02-09 11:03:51 +1100
+Processing by PagesController#home as HTML
+  Rendered pages/home.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 77ms (Views: 76.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2015-02-09 11:03:52 +1100
+Processing by SessionController#new as HTML
+  Rendered session/new.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 104ms (Views: 102.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for ::1 at 2015-02-09 11:03:55 +1100
+Processing by SessionController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zK/FUK5i568a2XbvYRXzXg41RAwD2a76494gSO2BdF8+G0hQx08HLQxGRBz/G3RaiAztMsmxeU4z0tThHP9Aow==", "username"=>["admin"], "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[35mUser Load (0.9ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."name" = 'admin' LIMIT 1
+Redirected to http://localhost:3000/
+Completed 302 Found in 90ms (ActiveRecord: 0.9ms)
+
+
+Started GET "/" for ::1 at 2015-02-09 11:03:55 +1100
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 31]]
+  Rendered pages/home.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 82ms (Views: 78.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/libraries/31" for ::1 at 2015-02-09 11:03:58 +1100
+Processing by LibrariesController#show as HTML
+  Parameters: {"id"=>"31"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 31]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 31]]
+  [1m[35mLibrary Load (0.7ms)[0m  SELECT  "libraries".* FROM "libraries" WHERE "libraries"."user_id" = $1 LIMIT 1  [["user_id", 31]]
+  [1m[36mPost Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "posts" INNER JOIN "libraries_posts" ON "posts"."id" = "libraries_posts"."post_id" WHERE "libraries_posts"."library_id" = $1 LIMIT 1[0m  [["library_id", 10]]
+  Rendered libraries/show.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 98ms (Views: 88.0ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/libraries/31" for ::1 at 2015-02-09 11:04:17 +1100
+Processing by LibrariesController#show as HTML
+  Parameters: {"id"=>"31"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 31]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 31]]
+  [1m[35mLibrary Load (0.3ms)[0m  SELECT  "libraries".* FROM "libraries" WHERE "libraries"."user_id" = $1 LIMIT 1  [["user_id", 31]]
+  [1m[36mPost Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "posts" INNER JOIN "libraries_posts" ON "posts"."id" = "libraries_posts"."post_id" WHERE "libraries_posts"."library_id" = $1 LIMIT 1[0m  [["library_id", 10]]
+  Rendered libraries/show.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 91ms (Views: 81.8ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for ::1 at 2015-02-09 11:04:32 +1100
+Processing by PagesController#home as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 31]]
+  Rendered pages/home.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 98ms (Views: 94.7ms | ActiveRecord: 0.3ms)
+
+
+Started DELETE "/login" for ::1 at 2015-02-09 11:04:33 +1100
+Processing by SessionController#destroy as HTML
+  Parameters: {"authenticity_token"=>"eTYmQrzgIjKDcRL8hwIL89NS7zLoPefLVepT5GJUh3uLgqtC1c3CsJXuIA8ZDIz3VWtGDCJVMH+F5qdNkyqzhw=="}
+  [1m[36mUser Load (1.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 31]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 7ms (ActiveRecord: 1.1ms)
+
+
+Started GET "/" for ::1 at 2015-02-09 11:04:33 +1100
+Processing by PagesController#home as HTML
+  Rendered pages/home.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 86ms (Views: 85.3ms | ActiveRecord: 0.0ms)
