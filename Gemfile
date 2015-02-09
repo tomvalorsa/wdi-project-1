@@ -33,6 +33,8 @@ group :development do
  gem 'meta_request'
 end
 
+gem 'rails_12factor', group: :production
+
 gem 'bootstrap-sass', '~> 3.3.3'
 gem 'sass-rails', '>= 3.2'
 
