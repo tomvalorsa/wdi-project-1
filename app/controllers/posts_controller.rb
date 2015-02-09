@@ -22,7 +22,7 @@ class PostsController < ApplicationController
 
       # literally the worst thing ever. Make it cleaner and less horrific by learning how to gsub out the last occurrence of a substring (attempt at gsub above needs tweaking)
       url_array = @post.codepen.split('/')
-      url_array[0] += '/'
+      url_array[0] = 'https:/'
       url_array[1] += '/'
       url_array[2] += '/'
       url_array[3] += '/'
