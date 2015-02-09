@@ -3,6 +3,8 @@ Rails.application.routes.draw do
 
   get '/about' => 'pages#about'
 
+  get '/dev_log' => 'pages#dev_log'
+
   resources :users, :posts
   # change below to only certain resources (e.g. can't delete a library)
   resources :libraries
