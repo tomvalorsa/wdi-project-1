@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   root :to => 'pages#home'
 
+  get '/about' => 'pages#about'
+
   resources :users, :posts
   # change below to only certain resources (e.g. can't delete a library)
   resources :libraries
