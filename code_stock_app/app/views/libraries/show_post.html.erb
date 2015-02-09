@@ -1,8 +1,9 @@
-<h1>This post page from the library selection</h1>
-
 <h2><%= @post.title %></h2>
 
-
+<% if @current_user.present? && @post.user_id == @current_user.id %>
+  <%= link_to 'Edit post', edit_post_path %>
+  <%= link_to 'Delete post', @post, :method => 'delete', :data => {:confirm => 'This will also remove the post from your library. Are you sure?'} %>
+<% end %>
 
 
 <!-- should redirect back to the library index -->
@@ -17,7 +18,7 @@
 
 
 <!-- get the user to paste in the original link, save that for the a, but sub out pen for embed for the iframe src -->
-<iframe height='350' scrolling='no' src='<%= @post.codepen %>' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/tomvalorsa/pen/YPErVE/'>YPErVE</a> by Tom Valorsa (<a href='http://codepen.io/tomvalorsa'>@tomvalorsa</a>) on <a href='http://codepen.io'>CodePen</a>.
+<iframe height='350' scrolling='no' src='<%= @post.codepen_embed %>' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>
 </iframe>
 
 <h2>Description:</h2>

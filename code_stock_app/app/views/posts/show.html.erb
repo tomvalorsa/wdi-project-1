@@ -1,5 +1,3 @@
-<h1>This is the individual post page</h1>
-
 <h2><%= @post.title %></h2>
 
 <!-- only lets user see the options to edit/delete if they are the author -->
@@ -23,9 +21,6 @@
 
 <% @author = User.find(@post.user_id) %>
 <p>Author: <%= @author.name %></p>
-
-<p>Codepen: <%= @post.codepen %></p>
-<p>Codepen embed: <%= @post.codepen_embed %></p>
 
 <!-- seems to work, try to break this -->
 <iframe height='350' scrolling='no' src='<%= @post.codepen_embed %>' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>
