@@ -34,7 +34,8 @@ class PostsController < ApplicationController
 
       # url_array = @post.codepen.split('/')
       @post.update(:codepen_embed => x)
-      redirect_to "/posts/#{@post.id}"
+      redirect_to "/library/posts/#{ @post.id }"
+
     end
   end
 
@@ -47,13 +48,13 @@ class PostsController < ApplicationController
   def update
     post = Post.find params[:id]
     post.update post_params
-    redirect_to post_path
+    redirect_to "/library/posts/#{ post.id }"
   end
 
   def destroy
     post = Post.find params[:id]
     post.destroy
-    redirect_to posts_path
+    redirect_to library_path
   end
 
   private
