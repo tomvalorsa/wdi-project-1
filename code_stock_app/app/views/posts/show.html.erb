@@ -7,16 +7,16 @@
   <%= link_to 'Edit post', edit_post_path %>
   <!-- :method needs to be :delete as this isn't a get request -->
   <%= link_to 'Delete post', @post, :method => 'delete', :data => {:confirm => 'Are you sure?'} %>
-  <!-- @current_user.library.posts << @post -->
 <% end %>
 
-<% unless @current_user.library.posts.include? @post %>
-  <%= link_to 'Add to library', "/posts/#{ @post.id }/add_to_library", :method => :post %>
-<% else %>
-  <!-- this needs to look through the lib array and remove the relevant post (given we're on the show page, @post.id should be fine for this) -->
-  <%= link_to 'Remove from library', '#' %>
-<% end %>
 
+<% if @current_user.present? && (@post.user_id != @current_user.id) %>
+  <% unless @current_user.library.posts.include? @post %>
+    <%= link_to 'Add to library', "/posts/#{ @post.id }/add_to_library", :method => :post %>
+  <% else %>
+    <%= link_to 'Remove from library', "/posts/#{ @post.id }/remove_from_library", :method => :post %>
+  <% end %>
+<% end %>
 
 <!-- logic below probably shouldn't be there...fix this -->
 

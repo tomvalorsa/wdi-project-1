@@ -10,4 +10,5 @@ Rails.application.routes.draw do
   delete '/login' => 'session#destroy'
 
   post '/posts/:id/add_to_library' => 'libraries#add'
+  post '/posts/:id/remove_from_library' => 'libraries#remove'
 end
