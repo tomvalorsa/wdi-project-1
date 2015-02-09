@@ -9,9 +9,5 @@ Rails.application.routes.draw do
   post '/login' => 'session#create'
   delete '/login' => 'session#destroy'
 
-  # get '/profile' => 'users#profile'
-  # post '/profile' => 'users#profile_edit'
-
-  # get '/users/:id/profile' => 'users#show'
-
+  post '/posts/:id/add_to_library' => 'libraries#add'
 end
