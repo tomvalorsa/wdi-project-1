@@ -14,6 +14,7 @@
   <% unless @current_user.library.posts.include? @post %>
     <%= link_to 'Add to library', "/posts/#{ @post.id }/add_to_library", :method => :post %>
   <% else %>
+  <!-- remove from lib here should redirect to the list of posts (index) -->
     <%= link_to 'Remove from library', "/posts/#{ @post.id }/remove_from_library", :method => :post %>
   <% end %>
 <% end %>

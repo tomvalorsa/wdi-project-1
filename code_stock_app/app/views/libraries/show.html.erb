@@ -5,7 +5,8 @@
   <ul>
     <% @posts.each do |post| %>
     <!-- does this need to store a link to the actual post, or a link to another instance of the post which has been saved to the user's library? -->
-      <li><%= link_to post.title, "/posts/#{ post.id }" %></li>
+    <!-- should link to the library's version of the post -->
+      <li><%= link_to post.title, "/library/posts/#{ post.id }" %></li>
     <% end %>
   </ul>
 <% end %>

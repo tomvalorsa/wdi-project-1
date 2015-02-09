@@ -1,0 +1,24 @@
+<h1>This post page from the library selection</h1>
+
+<h2><%= @post.title %></h2>
+
+
+
+
+<!-- should redirect back to the library index -->
+<!-- makes sure that a user can't delete a post they've authored from their lib -->
+<% unless @post.user_id == @current_user.id %>
+  <%= link_to 'Remove from library', "/library/posts/#{ @post.id }/remove_from_library", :method => :post %>
+<% end %>
+<!-- logic below probably shouldn't be there...fix this -->
+
+<% @author = User.find(@post.user_id) %>
+<p>Author: <%= @author.name %></p>
+
+
+<!-- get the user to paste in the original link, save that for the a, but sub out pen for embed for the iframe src -->
+<iframe height='350' scrolling='no' src='<%= @post.codepen %>' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/tomvalorsa/pen/YPErVE/'>YPErVE</a> by Tom Valorsa (<a href='http://codepen.io/tomvalorsa'>@tomvalorsa</a>) on <a href='http://codepen.io'>CodePen</a>.
+</iframe>
+
+<h2>Description:</h2>
+<p><%= @post.description %></p>
