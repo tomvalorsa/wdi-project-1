@@ -8,6 +8,6 @@ admin_lib = Library.create(:user_id => admin.id)
 
 u1 = User.create(:name => 'tom', :email => 'tom@tom.com', :bio => 'Hi my name is Tom and I live in Sydney.', :image => 'https://thechive.files.wordpress.com/2011/02/derp-idiot-13.jpg', :password => 'tom', :password_confirmation =>'tom')
 l1 = Library.create(:user_id => u1.id)
-p1 = Post.create(:title => 'Black Circle', :description => 'A circle made in CSS.', :codepen => 'http://codepen.io/tomvalorsa/pen/YPErVE', :codepen_embed => 'https://codepen.io/tomvalorsa/embed/YPErVE' :user_id => u1.id)
+p1 = Post.create(:title => 'Black Circle', :description => 'A circle made in CSS.', :codepen => 'http://codepen.io/tomvalorsa/pen/YPErVE', :codepen_embed => 'https://codepen.io/tomvalorsa/embed/YPErVE', :user_id => u1.id)
 
 l1.posts << p1
