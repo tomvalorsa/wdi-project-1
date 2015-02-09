@@ -1,24 +1,39 @@
 <h1>This is the homepage.</h1>
 
 <h2>'Completed' features:</h2>
+
+<h3>Authentication</h3>
 <ul>
   <li>sign up</li>
   <li>log in</li>
   <li>log out</li>
   <li>automatic login upon signing up</li>
+  <li>hardcoded admin user</li>
+</ul>
+
+<h3>User Stuff</h3>
+<ul>
   <li>present error messages when user is an idiot</li>
   <li>relationships seem to be set up and working (on pry)</li>
-  <li>hardcoded admin user</li>
   <li>make profile page and links to it</li>
   <li>add some seed data with dummy content and images to play around with and test profile pages</li>
   <li>add in a link to a form, so a user can edit their profile, allowing them to add a bio and image etc.</li>
-  <li>figure out how to give a user a library object automatically when they sign up (so they can view it and add to it)</li>
+</ul>
+
+<h3>Post Stuff</h3>
+<ul>
   <li>posting system works for adding and reading a post, as well as listing on the index page</li>
   <li>make a link for a new post for users that are signed in (you can view posts without an account, but need one to post and have a lib)</li>
   <li>post is given a user_id upon creation, relating it to the author of the post</li>
   <li>translated the author id into a name</li>
   <li>need to be able to update/edit and delete posts</li>
   <li>crUD system for posts, only author can edit/delete their own post</li>
+  <li>when user inputs a codepen url in post creation, pen appears on the post page</li>
+</ul>
+
+<h3>Library stuff</h3>
+<ul>
+  <li>figured out how to give a user a library object automatically when they sign up (so they can view it and add to it)</li>
   <li>new posts are automatically added to the author's library</li>
   <li>make a view library page specific to the current user</li>
   <li>add to library function</li>
@@ -31,17 +46,15 @@
 <h2>To do</h2>
 <h3>Next steps</h3>
 <ul>
-  <li><b>need to differentiate between removing from library from the lib, and from the post list. they need to redirect to different places</b></li>
-  <li>double check the library stuff when posts are made to see if they can be stored etc.</li>
-  <li>sort out the codepen embeds so the same things isn't hardcoded onto every post show page</li>
+  <li>come up with a solution to the image problem for a post. Need to somehow get a sort of preview from the embed</li>
+  <li>mess around with codepen embed to make it better, but keep it working</li>
+  <li>try and break shit and fix if necessary</li>
 </ul>
 
 <h3>Low Priority</h3>
 <ul>
   <li>put in an added to library message when the users adds a post to their lib</li>
   <li>sort out the nav mess in the layout erb</li>
-  <li>get the codepen to embed properly</li>
-  <li>get an image from the codepen to save in the :image column for each post</li>
   <li>display posts in a sexy grid</li>
   <li>make it so admin user list links to individual profile rather than just seeing their own profile for every user</li>
   <li>get a search function going for site content</li>

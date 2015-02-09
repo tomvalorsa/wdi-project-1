@@ -24,10 +24,15 @@
 <% @author = User.find(@post.user_id) %>
 <p>Author: <%= @author.name %></p>
 
+<p>Codepen: <%= @post.codepen %></p>
+<p>Codepen embed: <%= @post.codepen_embed %></p>
 
-<!-- get the user to paste in the original link, save that for the a, but sub out pen for embed for the iframe src -->
-<iframe height='350' scrolling='no' src='<%= @post.codepen %>' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/tomvalorsa/pen/YPErVE/'>YPErVE</a> by Tom Valorsa (<a href='http://codepen.io/tomvalorsa'>@tomvalorsa</a>) on <a href='http://codepen.io'>CodePen</a>.
+<!-- seems to work, try to break this -->
+<iframe height='350' scrolling='no' src='<%= @post.codepen_embed %>' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>
 </iframe>
+
+<p src=""></p>
+
 
 <h2>Description:</h2>
 <p><%= @post.description %></p>
