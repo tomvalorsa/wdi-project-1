@@ -7,3 +7,14 @@
     <li><%= link_to image.title, "/images/#{ image.id }" %></li>
   <% end %>
 </ul>
+
+
+<!-- file upload needs to be sorted out -->
+<!-- need this to print out each image in it's own div -->
+<% @images.each do |image| %>
+  <div class="col-md-3">
+    <a href="<%= '/images/' + (image.id).to_s %>" class="thumbnail">
+      <img src="<%= image.image_url %>" alt="">
+    </a>
+  </div>
+<% end %>
