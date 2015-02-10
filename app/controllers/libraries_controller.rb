@@ -1,7 +1,7 @@
 class LibrariesController < ApplicationController
   def show
     user = User.find @current_user.id
-    @user_posts = user.posts
+    @user_posts = user.posts.order(:title)
     @favourite_posts = user.library.posts.where.not(:user_id => @current_user.id)
 
     @user_images = user.images

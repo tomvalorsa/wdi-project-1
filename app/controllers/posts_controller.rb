@@ -1,6 +1,8 @@
 class PostsController < ApplicationController
   def index
-    @posts = Post.all
+    # need to sort this out as it separated capital and lower case letters
+    # could do this by forcing the user input to downcase, sorting it here and then capitalizing it on the view
+    @posts = Post.all.order(:title)
   end
 
   def new

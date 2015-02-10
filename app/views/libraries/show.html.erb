@@ -1,51 +1,71 @@
-<h1><%= @current_user.name %>'s Library</h1>
+<div class="row text-center">
+  <h1><%= @current_user.name %>'s Library</h1>
+</div>
 
-<h2>My Posts</h2>
-<h3>Code Snippets</h3>
-<% unless @user_posts.empty? %>
-  <ul>
-    <% @user_posts.each do |post| %>
-      <li><%= link_to post.title, "/library/posts/#{ post.id }" %></li>
-    <% end %>
-  </ul>
-<% else %>
-  <p>You haven't created any posts.</p>
-  <a href="<%= new_post_path %>">Create a new post</a>
-<% end %>
+<div class="row">
+  <h2>My Posts</h2>
+</div>
 
-<h3>Images</h3>
-<% unless @user_images.empty? %>
-  <ul>
+<div class="row">
+  <h3>Code Snippets</h3>
+  <% unless @user_posts.empty? %>
+    <ul>
+      <% @user_posts.each do |post| %>
+        <li><%= link_to post.title, "/library/posts/#{ post.id }" %></li>
+      <% end %>
+    </ul>
+  <% else %>
+    <p>You haven't created any posts.</p>
+    <a href="<%= new_post_path %>">Create a new post</a>
+  <% end %>
+</div>
+
+<div class="row">
+  <h3>Images</h3>
+  <% unless @user_images.empty? %>
     <% @user_images.each do |image| %>
-      <li><%= link_to image.title, "/library/images/#{ image.id }" %></li>
+      <div class="col-md-3">
+        <a href="<%= "/library/images/#{ image.id }" %>" class="thumbnail">
+          <img src="<%= image.image_url %>" alt="">
+        </a>
+      </div>
     <% end %>
-  </ul>
-<% else %>
-  <p>You haven't uploaded any images.</p>
-  <a href="<%= new_image_path %>">Create a new image post</a>
-<% end %>
+  <% else %>
+    <p>You haven't uploaded any images.</p>
+    <a href="<%= new_image_path %>">Create a new image post</a>
+  <% end %>
+</div>
 
-<h2>My Favourites</h2>
-<h3>Code Snippets</h3>
-<% unless @favourite_posts.empty? %>
-  <ul>
-    <% @favourite_posts.each do |post| %>
-      <li><%= link_to post.title, "/library/posts/#{ post.id }" %></li>
-    <% end %>
-  </ul>
-<% else %>
-  <p>You haven't favourited any posts.</p>
-  <a href="<%= posts_path %>">Browse posts</a>
-<% end %>
+<div class="row">
+  <h2>My Favourites</h2>
+</div>
 
-<h3>Images</h3>
-<% unless @favourite_images.empty? %>
-  <ul>
+<div class="row">
+  <h3>Code Snippets</h3>
+  <% unless @favourite_posts.empty? %>
+    <ul>
+      <% @favourite_posts.each do |post| %>
+        <li><%= link_to post.title, "/library/posts/#{ post.id }" %></li>
+      <% end %>
+    </ul>
+  <% else %>
+    <p>You haven't favourited any posts.</p>
+    <a href="<%= posts_path %>">Browse posts</a>
+  <% end %>
+</div>
+
+<div class="row">
+  <h3>Images</h3>
+  <% unless @favourite_images.empty? %>
     <% @favourite_images.each do |image| %>
-      <li><%= link_to image.title, "/library/images/#{ image.id }" %></li>
+      <div class="col-md-3">
+        <a href="<%= "/library/images/#{ image.id }" %>" class="thumbnail">
+          <img src="<%= image.image_url %>" alt="">
+        </a>
+      </div>
     <% end %>
-  </ul>
-<% else %>
-  <p>You haven't favourited any images.</p>
-  <a href="<%= images_path %>">Browse images</a>
-<% end %>
+  <% else %>
+    <p>You haven't favourited any images.</p>
+    <a href="<%= images_path %>">Browse images</a>
+  <% end %>
+</div>

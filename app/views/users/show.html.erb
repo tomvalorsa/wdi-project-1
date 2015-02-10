@@ -9,3 +9,12 @@
 <img src="<%= @user.image %>" alt="">
 <p>Bio:</p>
 <p><%= @user.bio %></p>
+
+<% unless @user.id == @current_user.id %>
+  <h3>Posts created by <%= @user.name %>:</h3>
+  <ul>
+    <% @user.posts.each do |post| %>
+      <li><%= link_to post.title, "/posts/#{post.id}" %></li>
+    <% end %>
+  </ul>
+<% end %>
