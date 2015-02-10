@@ -1,0 +1,28 @@
+<h2><%= @image.title %></h2>
+
+<%= link_to 'Back to images', images_path, :class => 'btn btn-default' %>
+
+<% if @current_user.present? && (@image.user_id != @current_user.id) %>
+  <% unless @current_user.library.images.include? @image %>
+    <%= link_to "/images/#{ @image.id }/add_to_library", :method => :post, :class => "btn btn-success" do %>
+        <i class="glyphicon glyphicon-plus"></i> Add to Library
+    <% end %>
+  <% else %>
+  <!-- remove from lib here should redirect to the list of posts (index) -->
+    <%= link_to "/images/#{ @image.id }/remove_from_library", :method => :post, :class => "btn btn-danger" do %>
+      <i class="glyphicon glyphicon-minus"></i> Remove from Library
+    <% end %>
+  <% end %>
+<% end %>
+
+<!-- logic below probably shouldn't be there...fix this -->
+
+<% @author = User.find(@image.user_id) %>
+<p>Author: <%= @author.name %></p>
+<p>Source: <%= @image.source %></p>
+<!-- seems to work, try to break this -->
+<img src="<%= @image.image_url %>" alt="">
+
+
+<h2>Description:</h2>
+<p><%= @image.description %></p>

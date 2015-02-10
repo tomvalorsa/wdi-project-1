@@ -3,6 +3,9 @@ class LibrariesController < ApplicationController
     user = User.find @current_user.id
     @user_posts = user.posts
     @favourite_posts = user.library.posts.where.not(:user_id => @current_user.id)
+
+    @user_images = user.images
+    @favourite_images = user.library.images.where.not(:user_id => @current_user.id)
   end
 
   def add
@@ -30,5 +33,27 @@ class LibrariesController < ApplicationController
   def show_post
     # needs to show the particular post
     @post = Post.find params[:id]
+  end
+
+  def add_image
+    image = Image.find params[:id]
+    @current_user.library.images << image
+    redirect_to image_path
+  end
+
+  def remove_image
+    lib_entry = Image.find params[:id]
+    @current_user.library.images.delete(lib_entry)
+    redirect_to image_path
+  end
+
+  def show_image
+    @image = Image.find params[:id]
+  end
+
+  def remove_image_from_lib
+    lib_entry = Image.find params[:id]
+    @current_user.library.images.delete(lib_entry)
+    redirect_to library_path
   end
 end

@@ -31,6 +31,7 @@
             <li><a href="/users/<%= @current_user.id %>">My Profile</a></li>
             <li><%= link_to 'Sign out ' + @current_user.name, login_path, :method => :delete %></li>
             <li><%= link_to 'Create a new post', new_post_path %></li>
+            <li><%= link_to 'Create new image post', new_image_path %></li>
             <li><%= link_to 'My Library', "/libraries/#{ @current_user.id }" %></li>
           <% end %>
           <li><%= link_to 'View posts', posts_path %></li>

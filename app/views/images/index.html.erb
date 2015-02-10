@@ -1,0 +1,9 @@
+<h1>Images Index Page</h1>
+
+<!-- make a list of posts here for the time being, sort out picture grid later -->
+
+<ul>
+  <% @images.each do |image| %>
+    <li><%= link_to image.title, "/images/#{ image.id }" %></li>
+  <% end %>
+</ul>
