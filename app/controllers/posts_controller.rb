@@ -30,16 +30,11 @@ class PostsController < ApplicationController
       url_array[5] += '/'
       x = url_array.join
 
-
-
-      # url_array = @post.codepen.split('/')
       @post.update(:codepen_embed => x)
       redirect_to "/library/posts/#{ @post.id }"
 
     end
   end
-
-
 
   def edit
     @post = Post.find params[:id]

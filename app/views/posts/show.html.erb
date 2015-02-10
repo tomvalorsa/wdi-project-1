@@ -2,17 +2,16 @@
 
 <%= link_to 'Back to posts', posts_path, :class => 'btn btn-default' %>
 
-<%= link_to posts_path, :class => "btn btn-default" do %>
-    <i class="glyphicon glyphicon-menu-left"></i>Back to posts
-<% end %>
-
-
 <% if @current_user.present? && (@post.user_id != @current_user.id) %>
   <% unless @current_user.library.posts.include? @post %>
-    <%= link_to 'Add to library', "/posts/#{ @post.id }/add_to_library", :method => :post, :class => "btn btn-success"  %>
+    <%= link_to "/posts/#{ @post.id }/add_to_library", :method => :post, :class => "btn btn-success" do %>
+        <i class="glyphicon glyphicon-plus"></i> Add to Library
+    <% end %>
   <% else %>
   <!-- remove from lib here should redirect to the list of posts (index) -->
-    <%= link_to 'Remove from library', "/posts/#{ @post.id }/remove_from_library", :method => :post, :class => "btn btn-danger" %>
+    <%= link_to "/posts/#{ @post.id }/remove_from_library", :method => :post, :class => "btn btn-danger" do %>
+      <i class="glyphicon glyphicon-minus"></i> Remove from Library
+    <% end %>
   <% end %>
 <% end %>
 

@@ -1,12 +1,25 @@
 <h1><%= @current_user.name %>'s Library</h1>
 
-
-<% unless @posts.empty? %>
+<h2>My Posts</h2>
+<% unless @user_posts.empty? %>
   <ul>
-    <% @posts.each do |post| %>
-    <!-- does this need to store a link to the actual post, or a link to another instance of the post which has been saved to the user's library? -->
-    <!-- should link to the library's version of the post -->
+    <% @user_posts.each do |post| %>
       <li><%= link_to post.title, "/library/posts/#{ post.id }" %></li>
     <% end %>
   </ul>
+<% else %>
+  <p>You haven't created any posts.</p>
+  <a href="<%= new_post_path %>">Create a new post</a>
+<% end %>
+
+<h2>Favourited Posts</h2>
+<% unless @favourite_posts.empty? %>
+  <ul>
+    <% @favourite_posts.each do |post| %>
+      <li><%= link_to post.title, "/library/posts/#{ post.id }" %></li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>You haven't favourited any posts.</p>
+  <a href="<%= posts_path %>">Browse posts</a>
 <% end %>
