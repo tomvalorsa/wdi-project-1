@@ -1,6 +1,7 @@
 User.destroy_all
 Post.destroy_all
 Library.destroy_all
+Image.destroy_all
 
 admin = User.create(:name => 'admin', :email => 'admin@admin.com', :password => 'admin', :image => 'http://www.businesscomputingworld.co.uk/wp-content/uploads/2012/07/Admin-Pet-Peeves.jpg', :password_confirmation => 'admin', :is_admin => true)
 admin_lib = Library.create(:user_id => admin.id)
