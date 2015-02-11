@@ -55096,3 +55096,811 @@ Processing by LibrariesController#show as HTML
   [1m[35mImage Load (0.5ms)[0m  SELECT "images".* FROM "images" INNER JOIN "images_libraries" ON "images"."id" = "images_libraries"."image_id" WHERE "images_libraries"."library_id" = $1 AND ("images"."user_id" != $2)  [["library_id", 39], ["user_id", 38]]
   Rendered libraries/show.html.erb within layouts/application (22.1ms)
 Completed 200 OK in 165ms (Views: 149.4ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/images" for ::1 at 2015-02-11 11:58:30 +1100
+Processing by ImagesController#index as HTML
+  [1m[36mUser Load (7.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 38]]
+  [1m[35mImage Load (5.5ms)[0m  SELECT "images".* FROM "images"
+  Rendered images/index.html.erb within layouts/application (28.7ms)
+Completed 200 OK in 383ms (Views: 343.9ms | ActiveRecord: 12.8ms)
+
+
+Started GET "/images" for ::1 at 2015-02-11 11:58:32 +1100
+Processing by ImagesController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 38]]
+  [1m[35mImage Load (0.6ms)[0m  SELECT "images".* FROM "images"
+  Rendered images/index.html.erb within layouts/application (13.2ms)
+Completed 200 OK in 209ms (Views: 204.4ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/images" for ::1 at 2015-02-11 11:59:00 +1100
+Processing by ImagesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 38]]
+  [1m[35mImage Load (0.4ms)[0m  SELECT "images".* FROM "images"
+  Rendered images/index.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 1864ms (Views: 1859.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/images" for ::1 at 2015-02-11 11:59:04 +1100
+Processing by ImagesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 38]]
+  [1m[35mImage Load (0.4ms)[0m  SELECT "images".* FROM "images"
+  Rendered images/index.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 140ms (Views: 137.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/images" for ::1 at 2015-02-11 11:59:37 +1100
+Processing by ImagesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 38]]
+  [1m[35mImage Load (0.4ms)[0m  SELECT "images".* FROM "images"
+  Rendered images/index.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 1725ms (Views: 1721.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/images/23" for ::1 at 2015-02-11 12:00:12 +1100
+Processing by ImagesController#show as HTML
+  Parameters: {"id"=>"23"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 38]]
+  [1m[35mImage Load (0.3ms)[0m  SELECT  "images".* FROM "images" WHERE "images"."id" = $1 LIMIT 1  [["id", 23]]
+  [1m[36mLibrary Load (0.6ms)[0m  [1mSELECT  "libraries".* FROM "libraries" WHERE "libraries"."user_id" = $1 LIMIT 1[0m  [["user_id", 38]]
+  [1m[35mImage Exists (6.4ms)[0m  SELECT "images".* FROM "images" INNER JOIN "images_libraries" ON "images"."id" = "images_libraries"."image_id" WHERE "images_libraries"."library_id" = $1 AND "images"."id" = $2  [["library_id", 39], ["id", 23]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 39]]
+  Rendered images/show.html.erb within layouts/application (17.4ms)
+Completed 200 OK in 156ms (Views: 144.5ms | ActiveRecord: 7.9ms)
+
+
+Started GET "/images/24" for ::1 at 2015-02-11 12:00:17 +1100
+Processing by ImagesController#show as HTML
+  Parameters: {"id"=>"24"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 38]]
+  [1m[36mImage Load (0.3ms)[0m  [1mSELECT  "images".* FROM "images" WHERE "images"."id" = $1 LIMIT 1[0m  [["id", 24]]
+  [1m[35mLibrary Load (0.3ms)[0m  SELECT  "libraries".* FROM "libraries" WHERE "libraries"."user_id" = $1 LIMIT 1  [["user_id", 38]]
+  [1m[36mImage Exists (0.5ms)[0m  [1mSELECT "images".* FROM "images" INNER JOIN "images_libraries" ON "images"."id" = "images_libraries"."image_id" WHERE "images_libraries"."library_id" = $1 AND "images"."id" = $2[0m  [["library_id", 39], ["id", 24]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 39]]
+  Rendered images/show.html.erb within layouts/application (9.0ms)
+Completed 200 OK in 146ms (Views: 140.8ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/images" for ::1 at 2015-02-11 12:00:30 +1100
+Processing by ImagesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 38]]
+  [1m[35mImage Load (0.5ms)[0m  SELECT "images".* FROM "images"
+  Rendered images/index.html.erb within layouts/application (6.2ms)
+Completed 200 OK in 150ms (Views: 146.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/images/26" for ::1 at 2015-02-11 12:00:32 +1100
+Processing by ImagesController#show as HTML
+  Parameters: {"id"=>"26"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 38]]
+  [1m[35mImage Load (0.3ms)[0m  SELECT  "images".* FROM "images" WHERE "images"."id" = $1 LIMIT 1  [["id", 26]]
+  [1m[36mLibrary Load (1.1ms)[0m  [1mSELECT  "libraries".* FROM "libraries" WHERE "libraries"."user_id" = $1 LIMIT 1[0m  [["user_id", 38]]
+  [1m[35mImage Exists (0.3ms)[0m  SELECT "images".* FROM "images" INNER JOIN "images_libraries" ON "images"."id" = "images_libraries"."image_id" WHERE "images_libraries"."library_id" = $1 AND "images"."id" = $2  [["library_id", 39], ["id", 26]]
+  [1m[36mUser Load (0.9ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 39]]
+  Rendered images/show.html.erb within layouts/application (17.0ms)
+Completed 200 OK in 233ms (Views: 220.4ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/images/25" for ::1 at 2015-02-11 12:00:35 +1100
+Processing by ImagesController#show as HTML
+  Parameters: {"id"=>"25"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 38]]
+  [1m[36mImage Load (0.2ms)[0m  [1mSELECT  "images".* FROM "images" WHERE "images"."id" = $1 LIMIT 1[0m  [["id", 25]]
+  [1m[35mLibrary Load (0.3ms)[0m  SELECT  "libraries".* FROM "libraries" WHERE "libraries"."user_id" = $1 LIMIT 1  [["user_id", 38]]
+  [1m[36mImage Exists (0.3ms)[0m  [1mSELECT "images".* FROM "images" INNER JOIN "images_libraries" ON "images"."id" = "images_libraries"."image_id" WHERE "images_libraries"."library_id" = $1 AND "images"."id" = $2[0m  [["library_id", 39], ["id", 25]]
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 39]]
+  Rendered images/show.html.erb within layouts/application (11.0ms)
+Completed 200 OK in 138ms (Views: 133.2ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/images/new" for ::1 at 2015-02-11 12:00:53 +1100
+Processing by ImagesController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 38]]
+  Rendered images/_form.html.erb (18.8ms)
+  Rendered images/new.html.erb within layouts/application (53.8ms)
+Completed 200 OK in 195ms (Views: 192.0ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/images" for ::1 at 2015-02-11 12:01:05 +1100
+Processing by ImagesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Thk4yAMWZGpaRV7iJ+wdpDHPIS2JSFWYcxszJ39xV1+To9fB6cOjLJF30WFYQM+YagZf+KI/U1EGT1JZ0aDXew==", "image"=>{"title"=>"", "source"=>"dssd", "description"=>"", "image_url"=>"", "image"=>#<ActionDispatch::Http::UploadedFile:0x007fe80a3f9ba8 @tempfile=#<Tempfile:/var/folders/80/r78p6_5x6tj8y5vr4jl01_rc0000gn/T/RackMultipart20150211-8865-1l0aicx.png>, @original_filename="Screen Shot 2015-02-01 at 5.51.39 pm.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"image[image]\"; filename=\"Screen Shot 2015-02-01 at 5.51.39 pm.png\"\r\nContent-Type: image/png\r\n">}, "commit"=>"Create Image"}
+  [1m[35mUser Load (0.8ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 38]]
+  [1m[36m (2.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (10.6ms)[0m  INSERT INTO "images" ("title", "source", "description", "image_url", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["title", ""], ["source", "dssd"], ["description", ""], ["image_url", ""], ["image", "Screen_Shot_2015-02-01_at_5.51.39_pm.png"], ["created_at", "2015-02-11 01:01:05.709554"], ["updated_at", "2015-02-11 01:01:05.709554"]]
+  [1m[36m (1.7ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (1.4ms)[0m  [1mUPDATE "images" SET "user_id" = $1, "updated_at" = $2 WHERE "images"."id" = $3[0m  [["user_id", 38], ["updated_at", "2015-02-11 01:01:05.748392"], ["id", 29]]
+  [1m[35m (0.4ms)[0m  COMMIT
+Redirected to http://localhost:3000/library/images/29
+Completed 302 Found in 313ms (ActiveRecord: 17.2ms)
+
+
+Started GET "/library/images/29" for ::1 at 2015-02-11 12:01:05 +1100
+Processing by LibrariesController#show_image as HTML
+  Parameters: {"id"=>"29"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 38]]
+  [1m[35mImage Load (0.4ms)[0m  SELECT  "images".* FROM "images" WHERE "images"."id" = $1 LIMIT 1  [["id", 29]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 38]]
+  Rendered libraries/show_image.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 152ms (Views: 145.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/posts" for ::1 at 2015-02-11 12:01:09 +1100
+Processing by PostsController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 38]]
+  [1m[36mPost Load (5.4ms)[0m  [1mSELECT "posts".* FROM "posts"  ORDER BY "posts"."title" ASC[0m
+  Rendered posts/index.html.erb within layouts/application (7.9ms)
+Completed 200 OK in 145ms (Views: 136.6ms | ActiveRecord: 5.7ms)
+
+
+Started GET "/images" for ::1 at 2015-02-11 12:01:10 +1100
+Processing by ImagesController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 38]]
+  [1m[36mImage Load (0.4ms)[0m  [1mSELECT "images".* FROM "images"[0m
+  Rendered images/index.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 126ms (Views: 122.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/images/new" for ::1 at 2015-02-11 12:01:17 +1100
+Processing by ImagesController#new as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 38]]
+  Rendered images/_form.html.erb (2.5ms)
+  Rendered images/new.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 123ms (Views: 120.5ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/images" for ::1 at 2015-02-11 12:01:23 +1100
+Processing by ImagesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"0+iRQqq5MCDaHgxCtbka7tlfKH/j5E82b3D3dz2tuLwOUn5LQGz3ZhEsg8HKFcjSgpZWqsiTSf8aJJYJk3w4mA==", "image"=>{"title"=>"", "source"=>"sdsd", "description"=>"", "image_url"=>"", "image"=>#<ActionDispatch::Http::UploadedFile:0x007fe805670508 @tempfile=#<Tempfile:/var/folders/80/r78p6_5x6tj8y5vr4jl01_rc0000gn/T/RackMultipart20150211-8865-1p67hxm.png>, @original_filename="Screen Shot 2015-02-01 at 6.08.50 pm.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"image[image]\"; filename=\"Screen Shot 2015-02-01 at 6.08.50 pm.png\"\r\nContent-Type: image/png\r\n">}, "commit"=>"Create Image"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 38]]
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "images" ("title", "source", "description", "image_url", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", ""], ["source", "sdsd"], ["description", ""], ["image_url", ""], ["image", "Screen_Shot_2015-02-01_at_6.08.50_pm.png"], ["created_at", "2015-02-11 01:01:23.951067"], ["updated_at", "2015-02-11 01:01:23.951067"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE "images" SET "user_id" = $1, "updated_at" = $2 WHERE "images"."id" = $3  [["user_id", 38], ["updated_at", "2015-02-11 01:01:23.973512"], ["id", 30]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/library/images/30
+Completed 302 Found in 420ms (ActiveRecord: 2.6ms)
+
+
+Started GET "/library/images/30" for ::1 at 2015-02-11 12:01:24 +1100
+Processing by LibrariesController#show_image as HTML
+  Parameters: {"id"=>"30"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 38]]
+  [1m[36mImage Load (0.3ms)[0m  [1mSELECT  "images".* FROM "images" WHERE "images"."id" = $1 LIMIT 1[0m  [["id", 30]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 38]]
+  Rendered libraries/show_image.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 155ms (Views: 148.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/images/new" for ::1 at 2015-02-11 12:01:26 +1100
+Processing by ImagesController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 38]]
+  Rendered images/_form.html.erb (3.4ms)
+  Rendered images/new.html.erb within layouts/application (6.9ms)
+Completed 200 OK in 218ms (Views: 213.8ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/images" for ::1 at 2015-02-11 12:01:33 +1100
+Processing by ImagesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/VTdJwVNBXg54wB2TWTAtlABSoUwYAXW2Ar4oXofoA4g7jIu75jCPvLRj/UyyBKKC8g0UBsXAx+tXpnf1M4gKg==", "image"=>{"title"=>"", "source"=>"sdsd", "description"=>"", "image_url"=>"", "image"=>#<ActionDispatch::Http::UploadedFile:0x007fe8054cf898 @tempfile=#<Tempfile:/var/folders/80/r78p6_5x6tj8y5vr4jl01_rc0000gn/T/RackMultipart20150211-8865-jfnk4o.png>, @original_filename="Screen Shot 2015-02-01 at 6.08.50 pm.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"image[image]\"; filename=\"Screen Shot 2015-02-01 at 6.08.50 pm.png\"\r\nContent-Type: image/png\r\n">}, "commit"=>"Create Image"}
+  [1m[35mUser Load (0.8ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 38]]
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "images" ("title", "source", "description", "image_url", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["title", ""], ["source", "sdsd"], ["description", ""], ["image_url", ""], ["image", "Screen_Shot_2015-02-01_at_6.08.50_pm.png"], ["created_at", "2015-02-11 01:01:34.357951"], ["updated_at", "2015-02-11 01:01:34.357951"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mUPDATE "images" SET "user_id" = $1, "updated_at" = $2 WHERE "images"."id" = $3[0m  [["user_id", 38], ["updated_at", "2015-02-11 01:01:34.380877"], ["id", 31]]
+  [1m[35m (0.5ms)[0m  COMMIT
+Redirected to http://localhost:3000/library/images/31
+Completed 302 Found in 441ms (ActiveRecord: 3.3ms)
+
+
+Started GET "/library/images/31" for ::1 at 2015-02-11 12:01:34 +1100
+Processing by LibrariesController#show_image as HTML
+  Parameters: {"id"=>"31"}
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 38]]
+  [1m[35mImage Load (0.3ms)[0m  SELECT  "images".* FROM "images" WHERE "images"."id" = $1 LIMIT 1  [["id", 31]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 38]]
+  Rendered libraries/show_image.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 172ms (Views: 165.0ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/images" for ::1 at 2015-02-11 12:01:36 +1100
+Processing by ImagesController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 38]]
+  [1m[36mImage Load (7.1ms)[0m  [1mSELECT "images".* FROM "images"[0m
+  Rendered images/index.html.erb within layouts/application (16.9ms)
+Completed 200 OK in 174ms (Views: 155.7ms | ActiveRecord: 7.4ms)
+
+
+Started GET "/images/new" for ::1 at 2015-02-11 12:01:43 +1100
+Processing by ImagesController#new as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 38]]
+  Rendered images/_form.html.erb (2.7ms)
+  Rendered images/new.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 120ms (Views: 117.6ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/images" for ::1 at 2015-02-11 12:01:49 +1100
+Processing by ImagesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"JHX5fiEWsgpuWVb7tdeAoF11XzbLC54XDTRylyyu0u/5zxZ3y8N1TKVr2XjKe1KcBrwh4+B8mN54YBPpgn9Syw==", "image"=>{"title"=>"", "source"=>"ssd", "description"=>"", "image_url"=>"", "image"=>#<ActionDispatch::Http::UploadedFile:0x007fe807f4e3d0 @tempfile=#<Tempfile:/var/folders/80/r78p6_5x6tj8y5vr4jl01_rc0000gn/T/RackMultipart20150211-8865-plpxkk.png>, @original_filename="Screen Shot 2015-02-01 at 10.10.52 pm.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"image[image]\"; filename=\"Screen Shot 2015-02-01 at 10.10.52 pm.png\"\r\nContent-Type: image/png\r\n">}, "commit"=>"Create Image"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 38]]
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (1.5ms)[0m  [1mINSERT INTO "images" ("title", "source", "description", "image_url", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", ""], ["source", "ssd"], ["description", ""], ["image_url", ""], ["image", "Screen_Shot_2015-02-01_at_10.10.52_pm.png"], ["created_at", "2015-02-11 01:01:49.927628"], ["updated_at", "2015-02-11 01:01:49.927628"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  UPDATE "images" SET "user_id" = $1, "updated_at" = $2 WHERE "images"."id" = $3  [["user_id", 38], ["updated_at", "2015-02-11 01:01:49.947943"], ["id", 32]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/library/images/32
+Completed 302 Found in 193ms (ActiveRecord: 3.7ms)
+
+
+Started GET "/library/images/32" for ::1 at 2015-02-11 12:01:49 +1100
+Processing by LibrariesController#show_image as HTML
+  Parameters: {"id"=>"32"}
+  [1m[35mUser Load (0.8ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 38]]
+  [1m[36mImage Load (0.4ms)[0m  [1mSELECT  "images".* FROM "images" WHERE "images"."id" = $1 LIMIT 1[0m  [["id", 32]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 38]]
+  Rendered libraries/show_image.html.erb within layouts/application (8.4ms)
+Completed 200 OK in 164ms (Views: 152.1ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/images" for ::1 at 2015-02-11 12:01:53 +1100
+Processing by ImagesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 38]]
+  [1m[35mImage Load (0.5ms)[0m  SELECT "images".* FROM "images"
+  Rendered images/index.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 125ms (Views: 121.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/images" for ::1 at 2015-02-11 12:02:19 +1100
+Processing by ImagesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 38]]
+  [1m[35mImage Load (0.4ms)[0m  SELECT "images".* FROM "images"
+  Rendered images/index.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 139ms (Views: 136.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/images/new" for ::1 at 2015-02-11 12:02:31 +1100
+Processing by ImagesController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 38]]
+  Rendered images/_form.html.erb (8.3ms)
+  Rendered images/new.html.erb within layouts/application (11.8ms)
+Completed 200 OK in 166ms (Views: 163.3ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/images" for ::1 at 2015-02-11 12:02:40 +1100
+Processing by ImagesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"c3dogASVrPXXWT3APISue/lQhpNRuqFCA4JAgXbtGJWuzYeJ7kBrsxxrskNDKHxHopn4RnrNp4t21iH/2DyYsQ==", "image"=>{"title"=>"", "source"=>"sds", "description"=>"", "image_url"=>"", "image"=>#<ActionDispatch::Http::UploadedFile:0x007fe80a34b648 @tempfile=#<Tempfile:/var/folders/80/r78p6_5x6tj8y5vr4jl01_rc0000gn/T/RackMultipart20150211-8865-fvtbja.png>, @original_filename="Screen Shot 2015-02-01 at 10.17.04 pm.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"image[image]\"; filename=\"Screen Shot 2015-02-01 at 10.17.04 pm.png\"\r\nContent-Type: image/png\r\n">}, "commit"=>"Create Image"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 38]]
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "images" ("title", "source", "description", "image_url", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["title", ""], ["source", "sds"], ["description", ""], ["image_url", ""], ["image", "Screen_Shot_2015-02-01_at_10.17.04_pm.png"], ["created_at", "2015-02-11 01:02:40.809629"], ["updated_at", "2015-02-11 01:02:40.809629"]]
+  [1m[36m (2.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "images" SET "user_id" = $1, "updated_at" = $2 WHERE "images"."id" = $3[0m  [["user_id", 38], ["updated_at", "2015-02-11 01:02:40.854130"], ["id", 33]]
+  [1m[35m (0.5ms)[0m  COMMIT
+Redirected to http://localhost:3000/library/images/33
+Completed 302 Found in 555ms (ActiveRecord: 4.9ms)
+
+
+Started GET "/library/images/33" for ::1 at 2015-02-11 12:02:40 +1100
+Processing by LibrariesController#show_image as HTML
+  Parameters: {"id"=>"33"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 38]]
+  [1m[35mImage Load (0.3ms)[0m  SELECT  "images".* FROM "images" WHERE "images"."id" = $1 LIMIT 1  [["id", 33]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 38]]
+  Rendered libraries/show_image.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 173ms (Views: 168.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/images/new" for ::1 at 2015-02-11 12:03:03 +1100
+Processing by ImagesController#new as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 38]]
+  Rendered images/_form.html.erb (2.8ms)
+  Rendered images/new.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 113ms (Views: 110.7ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/images" for ::1 at 2015-02-11 12:03:14 +1100
+Processing by ImagesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Owv40jjCFU+xAjpONykQKF+Nfe5oNeZmPjfaxiorWVjmsRfb0hfSCXowtc1IhcIUBEQDO0NC4K9LY7u4hPrZfA==", "image"=>{"title"=>"", "source"=>"cxcx", "description"=>"", "image_url"=>"", "image"=>#<ActionDispatch::Http::UploadedFile:0x007fe8098d0150 @tempfile=#<Tempfile:/var/folders/80/r78p6_5x6tj8y5vr4jl01_rc0000gn/T/RackMultipart20150211-8865-4c8oy9.png>, @original_filename="Screen Shot 2015-02-01 at 10.19.22 pm.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"image[image]\"; filename=\"Screen Shot 2015-02-01 at 10.19.22 pm.png\"\r\nContent-Type: image/png\r\n">}, "commit"=>"Create Image"}
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 38]]
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "images" ("title", "source", "description", "image_url", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", ""], ["source", "cxcx"], ["description", ""], ["image_url", ""], ["image", "Screen_Shot_2015-02-01_at_10.19.22_pm.png"], ["created_at", "2015-02-11 01:03:15.173856"], ["updated_at", "2015-02-11 01:03:15.173856"]]
+  [1m[35m (5.9ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  UPDATE "images" SET "user_id" = $1, "updated_at" = $2 WHERE "images"."id" = $3  [["user_id", 38], ["updated_at", "2015-02-11 01:03:15.201296"], ["id", 34]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/library/images/34
+Completed 302 Found in 481ms (ActiveRecord: 8.2ms)
+
+
+Started GET "/library/images/34" for ::1 at 2015-02-11 12:03:15 +1100
+Processing by LibrariesController#show_image as HTML
+  Parameters: {"id"=>"34"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 38]]
+  [1m[36mImage Load (0.2ms)[0m  [1mSELECT  "images".* FROM "images" WHERE "images"."id" = $1 LIMIT 1[0m  [["id", 34]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 38]]
+  Rendered libraries/show_image.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 172ms (Views: 167.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/images/new" for ::1 at 2015-02-11 12:03:16 +1100
+Processing by ImagesController#new as HTML
+  [1m[36mUser Load (1.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 38]]
+  Rendered images/_form.html.erb (5.5ms)
+  Rendered images/new.html.erb within layouts/application (9.1ms)
+Completed 200 OK in 175ms (Views: 154.1ms | ActiveRecord: 1.3ms)
+
+
+Started POST "/images" for ::1 at 2015-02-11 12:03:31 +1100
+Processing by ImagesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"qg231ZWKQ3xYoRlAoas8kcXJH0emqSYJ6C7JrV3+0e53t1jcf1+EOpOTlsPeB+6tngBhko3eIMCdeqjT8y9Ryg==", "image"=>{"title"=>"", "source"=>"xxcx", "description"=>"", "image_url"=>"", "image"=>#<ActionDispatch::Http::UploadedFile:0x007fe8011f71b0 @tempfile=#<Tempfile:/var/folders/80/r78p6_5x6tj8y5vr4jl01_rc0000gn/T/RackMultipart20150211-8865-ybmn13.png>, @original_filename="Screen Shot 2015-02-01 at 10.18.29 pm.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"image[image]\"; filename=\"Screen Shot 2015-02-01 at 10.18.29 pm.png\"\r\nContent-Type: image/png\r\n">}, "commit"=>"Create Image"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 38]]
+  [1m[36m (0.4ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "images" ("title", "source", "description", "image_url", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["title", ""], ["source", "xxcx"], ["description", ""], ["image_url", ""], ["image", "Screen_Shot_2015-02-01_at_10.18.29_pm.png"], ["created_at", "2015-02-11 01:03:32.021003"], ["updated_at", "2015-02-11 01:03:32.021003"]]
+  [1m[36m (1.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mSQL (0.9ms)[0m  [1mUPDATE "images" SET "user_id" = $1, "updated_at" = $2 WHERE "images"."id" = $3[0m  [["user_id", 38], ["updated_at", "2015-02-11 01:03:32.045781"], ["id", 35]]
+  [1m[35m (2.2ms)[0m  COMMIT
+Redirected to http://localhost:3000/library/images/35
+Completed 302 Found in 471ms (ActiveRecord: 5.9ms)
+
+
+Started GET "/library/images/35" for ::1 at 2015-02-11 12:03:32 +1100
+Processing by LibrariesController#show_image as HTML
+  Parameters: {"id"=>"35"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 38]]
+  [1m[35mImage Load (0.4ms)[0m  SELECT  "images".* FROM "images" WHERE "images"."id" = $1 LIMIT 1  [["id", 35]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 38]]
+  Rendered libraries/show_image.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 305ms (Views: 295.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/images" for ::1 at 2015-02-11 12:03:38 +1100
+Processing by ImagesController#index as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 38]]
+  [1m[36mImage Load (0.7ms)[0m  [1mSELECT "images".* FROM "images"[0m
+  Rendered images/index.html.erb within layouts/application (13.1ms)
+Completed 200 OK in 213ms (Views: 207.5ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/images" for ::1 at 2015-02-11 12:04:05 +1100
+Processing by ImagesController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 38]]
+  [1m[36mImage Load (0.8ms)[0m  [1mSELECT "images".* FROM "images"[0m
+  Rendered images/index.html.erb within layouts/application (11.2ms)
+Completed 200 OK in 162ms (Views: 158.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/images" for ::1 at 2015-02-11 12:04:39 +1100
+Processing by ImagesController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 38]]
+  [1m[36mImage Load (1.2ms)[0m  [1mSELECT "images".* FROM "images"[0m
+  Rendered images/index.html.erb within layouts/application (8.3ms)
+Completed 200 OK in 1722ms (Views: 1718.0ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/images" for ::1 at 2015-02-11 12:04:59 +1100
+Processing by ImagesController#index as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 38]]
+  [1m[36mImage Load (1.1ms)[0m  [1mSELECT "images".* FROM "images"[0m
+  Rendered images/index.html.erb within layouts/application (12.8ms)
+Completed 200 OK in 1672ms (Views: 1667.1ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/posts" for ::1 at 2015-02-11 12:05:17 +1100
+Processing by PostsController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 38]]
+  [1m[36mPost Load (1.2ms)[0m  [1mSELECT "posts".* FROM "posts"  ORDER BY "posts"."title" ASC[0m
+  Rendered posts/index.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 146ms (Views: 142.1ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/images" for ::1 at 2015-02-11 12:05:21 +1100
+Processing by ImagesController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 38]]
+  [1m[36mImage Load (0.4ms)[0m  [1mSELECT "images".* FROM "images"[0m
+  Rendered images/index.html.erb within layouts/application (6.2ms)
+Completed 200 OK in 140ms (Views: 137.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/images" for ::1 at 2015-02-11 12:06:29 +1100
+Processing by ImagesController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 38]]
+  [1m[36mImage Load (0.5ms)[0m  [1mSELECT "images".* FROM "images"[0m
+  Rendered images/index.html.erb within layouts/application (6.6ms)
+Completed 200 OK in 144ms (Views: 140.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/images/new" for ::1 at 2015-02-11 12:06:34 +1100
+Processing by ImagesController#new as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 38]]
+  Rendered images/_form.html.erb (2.2ms)
+  Rendered images/new.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 141ms (Views: 138.2ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/images" for ::1 at 2015-02-11 12:06:51 +1100
+Processing by ImagesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"TjCmqW55mMYExmF9uKBxYrekVUe8At2mmoCTWrPq3bOTikmghKxfgM/07v7HDKNe7G0rkpd122/v1PIkHTtdlw==", "image"=>{"title"=>"", "source"=>"dfd", "description"=>"", "image_url"=>"", "image"=>#<ActionDispatch::Http::UploadedFile:0x007fe807d65f00 @tempfile=#<Tempfile:/var/folders/80/r78p6_5x6tj8y5vr4jl01_rc0000gn/T/RackMultipart20150211-8865-60cj24.png>, @original_filename="Screen Shot 2015-02-01 at 10.20.52 pm.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"image[image]\"; filename=\"Screen Shot 2015-02-01 at 10.20.52 pm.png\"\r\nContent-Type: image/png\r\n">}, "commit"=>"Create Image"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 38]]
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "images" ("title", "source", "description", "image_url", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", ""], ["source", "dfd"], ["description", ""], ["image_url", ""], ["image", "Screen_Shot_2015-02-01_at_10.20.52_pm.png"], ["created_at", "2015-02-11 01:06:51.404977"], ["updated_at", "2015-02-11 01:06:51.404977"]]
+  [1m[35m (0.8ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  UPDATE "images" SET "user_id" = $1, "updated_at" = $2 WHERE "images"."id" = $3  [["user_id", 38], ["updated_at", "2015-02-11 01:06:51.423713"], ["id", 36]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/library/images/36
+Completed 302 Found in 149ms (ActiveRecord: 2.8ms)
+
+
+Started GET "/library/images/36" for ::1 at 2015-02-11 12:06:51 +1100
+Processing by LibrariesController#show_image as HTML
+  Parameters: {"id"=>"36"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 38]]
+  [1m[36mImage Load (0.4ms)[0m  [1mSELECT  "images".* FROM "images" WHERE "images"."id" = $1 LIMIT 1[0m  [["id", 36]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 38]]
+  Rendered libraries/show_image.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 167ms (Views: 160.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/images/new" for ::1 at 2015-02-11 12:06:54 +1100
+Processing by ImagesController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 38]]
+  Rendered images/_form.html.erb (3.2ms)
+  Rendered images/new.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 158ms (Views: 154.7ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/images" for ::1 at 2015-02-11 12:07:05 +1100
+Processing by ImagesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"LId47LWO0OomAvfHf+B2VwhtZguF/HXnILs5X7xNtYzxPZflX1sXrO0weEQATKRrU6QY3q6Lcy5V71ghEpw1qA==", "image"=>{"title"=>"", "source"=>"dfgdfg", "description"=>"", "image_url"=>"", "image"=>#<ActionDispatch::Http::UploadedFile:0x007fe807a27a50 @tempfile=#<Tempfile:/var/folders/80/r78p6_5x6tj8y5vr4jl01_rc0000gn/T/RackMultipart20150211-8865-1j0oc5.png>, @original_filename="Screen Shot 2015-02-01 at 10.21.28 pm.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"image[image]\"; filename=\"Screen Shot 2015-02-01 at 10.21.28 pm.png\"\r\nContent-Type: image/png\r\n">}, "commit"=>"Create Image"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 38]]
+  [1m[36m (0.4ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "images" ("title", "source", "description", "image_url", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["title", ""], ["source", "dfgdfg"], ["description", ""], ["image_url", ""], ["image", "Screen_Shot_2015-02-01_at_10.21.28_pm.png"], ["created_at", "2015-02-11 01:07:05.543984"], ["updated_at", "2015-02-11 01:07:05.543984"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "images" SET "user_id" = $1, "updated_at" = $2 WHERE "images"."id" = $3[0m  [["user_id", 38], ["updated_at", "2015-02-11 01:07:05.564510"], ["id", 37]]
+  [1m[35m (0.7ms)[0m  COMMIT
+Redirected to http://localhost:3000/library/images/37
+Completed 302 Found in 438ms (ActiveRecord: 2.8ms)
+
+
+Started GET "/library/images/37" for ::1 at 2015-02-11 12:07:05 +1100
+Processing by LibrariesController#show_image as HTML
+  Parameters: {"id"=>"37"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 38]]
+  [1m[35mImage Load (0.3ms)[0m  SELECT  "images".* FROM "images" WHERE "images"."id" = $1 LIMIT 1  [["id", 37]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 38]]
+  Rendered libraries/show_image.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 151ms (Views: 145.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/images/new" for ::1 at 2015-02-11 12:07:09 +1100
+Processing by ImagesController#new as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 38]]
+  Rendered images/_form.html.erb (3.4ms)
+  Rendered images/new.html.erb within layouts/application (7.4ms)
+Completed 200 OK in 163ms (Views: 158.8ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/images" for ::1 at 2015-02-11 12:07:23 +1100
+Processing by ImagesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xbmwOvJ1okV1c63O+aKig5nNGInG/3Cvf8JXFR9aNM4YA18zGKBlA75BIk2GDnC/wgRmXO2IdmYKljZrsYu06g==", "image"=>{"title"=>"", "source"=>"fdgf", "description"=>"", "image_url"=>"", "image"=>#<ActionDispatch::Http::UploadedFile:0x007fe80a09ab10 @tempfile=#<Tempfile:/var/folders/80/r78p6_5x6tj8y5vr4jl01_rc0000gn/T/RackMultipart20150211-8865-1kgk3do.png>, @original_filename="Screen Shot 2015-02-01 at 10.22.32 pm.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"image[image]\"; filename=\"Screen Shot 2015-02-01 at 10.22.32 pm.png\"\r\nContent-Type: image/png\r\n">}, "commit"=>"Create Image"}
+  [1m[36mUser Load (1.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 38]]
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "images" ("title", "source", "description", "image_url", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", ""], ["source", "fdgf"], ["description", ""], ["image_url", ""], ["image", "Screen_Shot_2015-02-01_at_10.22.32_pm.png"], ["created_at", "2015-02-11 01:07:24.086049"], ["updated_at", "2015-02-11 01:07:24.086049"]]
+  [1m[35m (0.6ms)[0m  COMMIT
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  UPDATE "images" SET "user_id" = $1, "updated_at" = $2 WHERE "images"."id" = $3  [["user_id", 38], ["updated_at", "2015-02-11 01:07:24.102090"], ["id", 38]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/library/images/38
+Completed 302 Found in 351ms (ActiveRecord: 3.9ms)
+
+
+Started GET "/library/images/38" for ::1 at 2015-02-11 12:07:24 +1100
+Processing by LibrariesController#show_image as HTML
+  Parameters: {"id"=>"38"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 38]]
+  [1m[36mImage Load (0.3ms)[0m  [1mSELECT  "images".* FROM "images" WHERE "images"."id" = $1 LIMIT 1[0m  [["id", 38]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 38]]
+  Rendered libraries/show_image.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 141ms (Views: 135.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/images/new" for ::1 at 2015-02-11 12:07:25 +1100
+Processing by ImagesController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 38]]
+  Rendered images/_form.html.erb (2.9ms)
+  Rendered images/new.html.erb within layouts/application (6.5ms)
+Completed 200 OK in 164ms (Views: 161.3ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/images" for ::1 at 2015-02-11 12:07:38 +1100
+Processing by ImagesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"eLKjVi6LYJ8SU5wA7/L5/sKy/xyUsk1o5q2/CtmWhC2lCExfxF6n2dlhE4OQXivCmXuByb/FS6GT+d50d0cECQ==", "image"=>{"title"=>"", "source"=>"dfgdfg", "description"=>"", "image_url"=>"", "image"=>#<ActionDispatch::Http::UploadedFile:0x007fe804b42f78 @tempfile=#<Tempfile:/var/folders/80/r78p6_5x6tj8y5vr4jl01_rc0000gn/T/RackMultipart20150211-8865-1xz2qdm.png>, @original_filename="Screen Shot 2015-02-02 at 9.16.05 pm.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"image[image]\"; filename=\"Screen Shot 2015-02-02 at 9.16.05 pm.png\"\r\nContent-Type: image/png\r\n">}, "commit"=>"Create Image"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 38]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "images" ("title", "source", "description", "image_url", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["title", ""], ["source", "dfgdfg"], ["description", ""], ["image_url", ""], ["image", "Screen_Shot_2015-02-02_at_9.16.05_pm.png"], ["created_at", "2015-02-11 01:07:38.855708"], ["updated_at", "2015-02-11 01:07:38.855708"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "images" SET "user_id" = $1, "updated_at" = $2 WHERE "images"."id" = $3[0m  [["user_id", 38], ["updated_at", "2015-02-11 01:07:38.872185"], ["id", 39]]
+  [1m[35m (0.4ms)[0m  COMMIT
+Redirected to http://localhost:3000/library/images/39
+Completed 302 Found in 329ms (ActiveRecord: 2.3ms)
+
+
+Started GET "/library/images/39" for ::1 at 2015-02-11 12:07:38 +1100
+Processing by LibrariesController#show_image as HTML
+  Parameters: {"id"=>"39"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 38]]
+  [1m[35mImage Load (1.5ms)[0m  SELECT  "images".* FROM "images" WHERE "images"."id" = $1 LIMIT 1  [["id", 39]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 38]]
+  Rendered libraries/show_image.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 146ms (Views: 138.7ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/images/new" for ::1 at 2015-02-11 12:07:40 +1100
+Processing by ImagesController#new as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 38]]
+  Rendered images/_form.html.erb (2.9ms)
+  Rendered images/new.html.erb within layouts/application (6.7ms)
+Completed 200 OK in 135ms (Views: 132.4ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/images" for ::1 at 2015-02-11 12:07:53 +1100
+Processing by ImagesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"bFZ28VKLUVzjMnuwHR0d+nTlO+O/0ekDI0LPArVzTSqx7Jn4uF6WGigA9DNisc/GLyxFNpSm78pWFq58G6LNDg==", "image"=>{"title"=>"", "source"=>"dfgdf", "description"=>"", "image_url"=>"", "image"=>#<ActionDispatch::Http::UploadedFile:0x007fe8026bad68 @tempfile=#<Tempfile:/var/folders/80/r78p6_5x6tj8y5vr4jl01_rc0000gn/T/RackMultipart20150211-8865-1d27r8n.png>, @original_filename="Screen Shot 2015-02-03 at 11.13.37 pm.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"image[image]\"; filename=\"Screen Shot 2015-02-03 at 11.13.37 pm.png\"\r\nContent-Type: image/png\r\n">}, "commit"=>"Create Image"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 38]]
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "images" ("title", "source", "description", "image_url", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", ""], ["source", "dfgdf"], ["description", ""], ["image_url", ""], ["image", "Screen_Shot_2015-02-03_at_11.13.37_pm.png"], ["created_at", "2015-02-11 01:07:54.253182"], ["updated_at", "2015-02-11 01:07:54.253182"]]
+  [1m[35m (0.7ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  UPDATE "images" SET "user_id" = $1, "updated_at" = $2 WHERE "images"."id" = $3  [["user_id", 38], ["updated_at", "2015-02-11 01:07:54.274345"], ["id", 40]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/library/images/40
+Completed 302 Found in 418ms (ActiveRecord: 2.9ms)
+
+
+Started GET "/library/images/40" for ::1 at 2015-02-11 12:07:54 +1100
+Processing by LibrariesController#show_image as HTML
+  Parameters: {"id"=>"40"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 38]]
+  [1m[36mImage Load (0.2ms)[0m  [1mSELECT  "images".* FROM "images" WHERE "images"."id" = $1 LIMIT 1[0m  [["id", 40]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 38]]
+  Rendered libraries/show_image.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 148ms (Views: 143.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/images/new" for ::1 at 2015-02-11 12:07:55 +1100
+Processing by ImagesController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 38]]
+  Rendered images/_form.html.erb (3.7ms)
+  Rendered images/new.html.erb within layouts/application (7.4ms)
+Completed 200 OK in 194ms (Views: 190.8ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/images" for ::1 at 2015-02-11 12:08:13 +1100
+Processing by ImagesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"79g5W+zq5OGp5xMaBVDS7tS8aADIMaewI5FBUqERLisyYtZSBj8jp2LVnJl6/ADSj3UW1eNGoXlWxSAsD8CuDw==", "image"=>{"title"=>"", "source"=>"dfgdfg", "description"=>"", "image_url"=>"", "image"=>#<ActionDispatch::Http::UploadedFile:0x007fe809bb9510 @tempfile=#<Tempfile:/var/folders/80/r78p6_5x6tj8y5vr4jl01_rc0000gn/T/RackMultipart20150211-8865-s8ckif.png>, @original_filename="Screen Shot 2015-02-04 at 10.26.42 pm.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"image[image]\"; filename=\"Screen Shot 2015-02-04 at 10.26.42 pm.png\"\r\nContent-Type: image/png\r\n">}, "commit"=>"Create Image"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 38]]
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "images" ("title", "source", "description", "image_url", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["title", ""], ["source", "dfgdfg"], ["description", ""], ["image_url", ""], ["image", "Screen_Shot_2015-02-04_at_10.26.42_pm.png"], ["created_at", "2015-02-11 01:08:13.597015"], ["updated_at", "2015-02-11 01:08:13.597015"]]
+  [1m[36m (0.7ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mUPDATE "images" SET "user_id" = $1, "updated_at" = $2 WHERE "images"."id" = $3[0m  [["user_id", 38], ["updated_at", "2015-02-11 01:08:13.614342"], ["id", 41]]
+  [1m[35m (0.4ms)[0m  COMMIT
+Redirected to http://localhost:3000/library/images/41
+Completed 302 Found in 414ms (ActiveRecord: 2.8ms)
+
+
+Started GET "/library/images/41" for ::1 at 2015-02-11 12:08:13 +1100
+Processing by LibrariesController#show_image as HTML
+  Parameters: {"id"=>"41"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 38]]
+  [1m[35mImage Load (0.2ms)[0m  SELECT  "images".* FROM "images" WHERE "images"."id" = $1 LIMIT 1  [["id", 41]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 38]]
+  Rendered libraries/show_image.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 145ms (Views: 140.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/images" for ::1 at 2015-02-11 12:08:15 +1100
+Processing by ImagesController#index as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 38]]
+  [1m[36mImage Load (1.4ms)[0m  [1mSELECT "images".* FROM "images"[0m
+  Rendered images/index.html.erb within layouts/application (14.5ms)
+Completed 200 OK in 178ms (Views: 172.0ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/images" for ::1 at 2015-02-11 12:08:52 +1100
+Processing by ImagesController#index as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 38]]
+  [1m[36mImage Load (1.0ms)[0m  [1mSELECT "images".* FROM "images"[0m
+  Rendered images/index.html.erb within layouts/application (9.6ms)
+Completed 200 OK in 196ms (Views: 189.1ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/images" for ::1 at 2015-02-11 12:08:54 +1100
+Processing by ImagesController#index as HTML
+  [1m[35mUser Load (1.7ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 38]]
+  [1m[36mImage Load (0.6ms)[0m  [1mSELECT "images".* FROM "images"[0m
+  Rendered images/index.html.erb within layouts/application (9.8ms)
+Completed 200 OK in 240ms (Views: 232.9ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/images" for ::1 at 2015-02-11 12:08:56 +1100
+Processing by ImagesController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 38]]
+  [1m[36mImage Load (0.6ms)[0m  [1mSELECT "images".* FROM "images"[0m
+  Rendered images/index.html.erb within layouts/application (9.1ms)
+Completed 200 OK in 167ms (Views: 163.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/images" for ::1 at 2015-02-11 12:09:15 +1100
+Processing by ImagesController#index as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 38]]
+  [1m[36mImage Load (0.8ms)[0m  [1mSELECT "images".* FROM "images"[0m
+  Rendered images/index.html.erb within layouts/application (11.7ms)
+Completed 200 OK in 162ms (Views: 157.1ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/images" for ::1 at 2015-02-11 12:09:17 +1100
+Processing by ImagesController#index as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 38]]
+  [1m[36mImage Load (0.9ms)[0m  [1mSELECT "images".* FROM "images"[0m
+  Rendered images/index.html.erb within layouts/application (10.7ms)
+Completed 200 OK in 183ms (Views: 177.2ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/images" for ::1 at 2015-02-11 12:09:18 +1100
+Processing by ImagesController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 38]]
+  [1m[36mImage Load (0.4ms)[0m  [1mSELECT "images".* FROM "images"[0m
+  Rendered images/index.html.erb within layouts/application (9.0ms)
+Completed 200 OK in 151ms (Views: 147.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/images" for ::1 at 2015-02-11 12:09:19 +1100
+Processing by ImagesController#index as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 38]]
+  [1m[36mImage Load (0.9ms)[0m  [1mSELECT "images".* FROM "images"[0m
+  Rendered images/index.html.erb within layouts/application (7.9ms)
+Completed 200 OK in 157ms (Views: 152.4ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/images" for ::1 at 2015-02-11 12:09:45 +1100
+Processing by ImagesController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 38]]
+  [1m[36mImage Load (0.4ms)[0m  [1mSELECT "images".* FROM "images"[0m
+  Rendered images/index.html.erb within layouts/application (7.3ms)
+Completed 200 OK in 146ms (Views: 141.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/images" for ::1 at 2015-02-11 12:10:07 +1100
+Processing by ImagesController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 38]]
+  [1m[36mImage Load (0.5ms)[0m  [1mSELECT "images".* FROM "images"[0m
+  Rendered images/index.html.erb within layouts/application (8.4ms)
+Completed 200 OK in 1907ms (Views: 1903.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/images" for ::1 at 2015-02-11 12:10:30 +1100
+Processing by ImagesController#index as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 38]]
+  [1m[36mImage Load (0.5ms)[0m  [1mSELECT "images".* FROM "images"[0m
+  Rendered images/index.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 1512ms (Views: 1507.8ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/images" for ::1 at 2015-02-11 12:10:53 +1100
+Processing by ImagesController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 38]]
+  [1m[36mImage Load (0.7ms)[0m  [1mSELECT "images".* FROM "images"[0m
+  Rendered images/index.html.erb within layouts/application (7.8ms)
+Completed 200 OK in 1892ms (Views: 1887.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/images" for ::1 at 2015-02-11 12:11:04 +1100
+Processing by ImagesController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 38]]
+  [1m[36mImage Load (0.5ms)[0m  [1mSELECT "images".* FROM "images"[0m
+  Rendered images/index.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 1660ms (Views: 1654.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/images" for ::1 at 2015-02-11 12:11:27 +1100
+Processing by ImagesController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 38]]
+  [1m[36mImage Load (0.7ms)[0m  [1mSELECT "images".* FROM "images"[0m
+  Rendered images/index.html.erb within layouts/application (7.9ms)
+Completed 200 OK in 1836ms (Views: 1832.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/images" for ::1 at 2015-02-11 12:11:34 +1100
+Processing by ImagesController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 38]]
+  [1m[36mImage Load (0.5ms)[0m  [1mSELECT "images".* FROM "images"[0m
+  Rendered images/index.html.erb within layouts/application (7.9ms)
+Completed 200 OK in 1520ms (Views: 1516.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/images" for ::1 at 2015-02-11 12:11:46 +1100
+Processing by ImagesController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 38]]
+  [1m[36mImage Load (0.8ms)[0m  [1mSELECT "images".* FROM "images"[0m
+  Rendered images/index.html.erb within layouts/application (7.3ms)
+Completed 200 OK in 1690ms (Views: 1685.8ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/images" for ::1 at 2015-02-11 12:12:05 +1100
+Processing by ImagesController#index as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 38]]
+  [1m[36mImage Load (0.5ms)[0m  [1mSELECT "images".* FROM "images"[0m
+  Rendered images/index.html.erb within layouts/application (8.5ms)
+Completed 200 OK in 1683ms (Views: 1679.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/images" for ::1 at 2015-02-11 12:12:16 +1100
+Processing by ImagesController#index as HTML
+  [1m[35mUser Load (0.8ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 38]]
+  [1m[36mImage Load (0.5ms)[0m  [1mSELECT "images".* FROM "images"[0m
+  Rendered images/index.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 1487ms (Views: 1482.1ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/images" for ::1 at 2015-02-11 12:12:23 +1100
+Processing by ImagesController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 38]]
+  [1m[36mImage Load (0.8ms)[0m  [1mSELECT "images".* FROM "images"[0m
+  Rendered images/index.html.erb within layouts/application (7.4ms)
+Completed 200 OK in 1581ms (Views: 1577.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/images" for ::1 at 2015-02-11 12:12:31 +1100
+Processing by ImagesController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 38]]
+  [1m[36mImage Load (0.7ms)[0m  [1mSELECT "images".* FROM "images"[0m
+  Rendered images/index.html.erb within layouts/application (9.0ms)
+Completed 200 OK in 1539ms (Views: 1535.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/images" for ::1 at 2015-02-11 12:12:45 +1100
+Processing by ImagesController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 38]]
+  [1m[36mImage Load (0.5ms)[0m  [1mSELECT "images".* FROM "images"[0m
+  Rendered images/index.html.erb within layouts/application (9.9ms)
+Completed 200 OK in 1643ms (Views: 1638.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/images" for ::1 at 2015-02-11 12:13:18 +1100
+Processing by ImagesController#index as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 38]]
+  [1m[36mImage Load (0.6ms)[0m  [1mSELECT "images".* FROM "images"[0m
+  Rendered images/index.html.erb within layouts/application (9.4ms)
+Completed 200 OK in 1752ms (Views: 1746.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/images" for ::1 at 2015-02-11 12:13:31 +1100
+Processing by ImagesController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 38]]
+  [1m[36mImage Load (0.6ms)[0m  [1mSELECT "images".* FROM "images"[0m
+  Rendered images/index.html.erb within layouts/application (9.2ms)
+Completed 200 OK in 1744ms (Views: 1739.8ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/images" for ::1 at 2015-02-11 12:13:37 +1100
+Processing by ImagesController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 38]]
+  [1m[36mImage Load (0.5ms)[0m  [1mSELECT "images".* FROM "images"[0m
+  Rendered images/index.html.erb within layouts/application (7.7ms)
+Completed 200 OK in 120ms (Views: 117.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/images" for ::1 at 2015-02-11 12:13:39 +1100
+Processing by ImagesController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 38]]
+  [1m[36mImage Load (0.5ms)[0m  [1mSELECT "images".* FROM "images"[0m
+  Rendered images/index.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 126ms (Views: 123.5ms | ActiveRecord: 0.8ms)

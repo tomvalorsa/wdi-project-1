@@ -6,10 +6,12 @@
 
 <!-- file upload needs to be sorted out -->
 <!-- need this to print out each image in it's own div -->
-<% @images.each do |image| %>
-  <div class="col-md-3">
-    <a href="<%= "/images/#{ image.id }" %>" class="thumbnail">
-      <img src="<%= image.image_url %>" alt="">
-    </a>
-  </div>
-<% end %>
+<div class="row">
+  <% @images.shuffle.each do |image| %>
+    <div class="col-lg-3 col-md-4 col-sm-6">
+      <a href="<%= "/images/#{ image.id }" %>" class="img-responsive">
+        <img src="<%= image.image_url %>" alt="">
+      </a>
+    </div>
+  <% end %>
+</div>
