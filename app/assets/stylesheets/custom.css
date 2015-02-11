@@ -67,3 +67,7 @@ footer a:hover {
   top: 8px;
   right: 8px;
 }
+
+.login-nav {
+  margin-right: -8px;
+}
