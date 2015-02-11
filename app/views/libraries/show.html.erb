@@ -22,19 +22,27 @@
 
 <div class="row">
   <h3>Images</h3>
+</div>
+
+
+
   <% unless @user_images.empty? %>
+  <div class="row-custom">
     <% @user_images.each do |image| %>
-      <div class="col-md-3">
-        <a href="<%= "/library/images/#{ image.id }" %>" class="thumbnail">
+      <div class="col-lg-3 col-md-4 col-sm-6">
+        <a href="<%= "/library/images/#{ image.id }" %>" class="img-responsive">
           <img src="<%= image.image_url %>" alt="">
         </a>
       </div>
     <% end %>
+    </div>
   <% else %>
+  <div class="row">
     <p>You haven't uploaded any images.</p>
     <a href="<%= new_image_path %>">Create a new image post</a>
+    </div>
   <% end %>
-</div>
+
 
 <div class="row">
   <h2>My Favourites</h2>
@@ -56,16 +64,22 @@
 
 <div class="row">
   <h3>Images</h3>
+</div>
+
+
   <% unless @favourite_images.empty? %>
+  <div class="row-custom">
     <% @favourite_images.each do |image| %>
-      <div class="col-md-3">
-        <a href="<%= "/library/images/#{ image.id }" %>" class="thumbnail">
+      <div class="col-lg-3 col-md-4 col-sm-6">
+        <a href="<%= "/library/images/#{ image.id }" %>" class="img-responsive">
           <img src="<%= image.image_url %>" alt="">
         </a>
       </div>
     <% end %>
+    </div>
   <% else %>
+  <div class="row">
     <p>You haven't favourited any images.</p>
     <a href="<%= images_path %>">Browse images</a>
+    </div>
   <% end %>
-</div>

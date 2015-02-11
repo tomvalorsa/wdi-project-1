@@ -1,0 +1,6 @@
+<h2>Search Results:</h2>
+<ul>
+  <% @posts.each do |post| %>
+    <li><%= link_to post.title, "/posts/#{ post.id }" %></li>
+  <% end %>
+</ul>

@@ -1,12 +1,13 @@
-<h1>Images Index Page</h1>
+<% unless @current_user.present? %>
+  <div class="jumbotron text-center">
+    <h1>Name_of_site</h1>
+    <p>This site is really good for x, y and z.</p>
+    <!-- button below could take user to about page which has a link for sign up -->
+    <p><a class="btn btn-primary btn-lg" href="<%= about_path %>" role="button">Learn more</a></p>
+  </div>
+<% end %>
 
-<!-- make a list of posts here for the time being, sort out picture grid later -->
-
-
-
-<!-- file upload needs to be sorted out -->
-<!-- need this to print out each image in it's own div -->
-<div class="row">
+<div class="row-custom">
   <% @images.shuffle.each do |image| %>
     <div class="col-lg-3 col-md-4 col-sm-6">
       <a href="<%= "/images/#{ image.id }" %>" class="img-responsive">

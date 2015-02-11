@@ -16,4 +16,8 @@
 class Post < ActiveRecord::Base
   has_and_belongs_to_many :libraries
   belongs_to :user
+
+  def self.search(query)
+    where("title like ?", "%#{query}%")
+  end
 end
