@@ -11,36 +11,37 @@
 
   <nav class="navbar navbar-default">
     <div class="container-fluid">
+
+
+      <!-- add in the logo and make it a link to the homepage -->
         <ul class="nav navbar-nav">
-          <li><%= link_to 'Home', root_path %></li>
-
-          <!-- if nobody is signed in -->
-          <% unless @current_user.present? %>
-            <li><%= link_to 'Sign up', new_user_path %></li>
-            <li><%= link_to 'Log in', login_path %></li>
-          <% end %>
-
-          <!-- if a user is signed in -->
-          <% if  @current_user.present? %>
-
-            <!-- check if admin -->
-            <% if @current_user.is_admin? %>
-              <li><%= link_to 'All users', users_path %></li>
-            <% end %>
-
-            <li><a href="/users/<%= @current_user.id %>">My Profile</a></li>
-            <li><%= link_to 'Sign out ' + @current_user.name, login_path, :method => :delete %></li>
-            <li><%= link_to 'Create a new post', new_post_path %></li>
-            <li><%= link_to 'Create new image post', new_image_path %></li>
-            <li><%= link_to 'My Library', "/libraries/#{ @current_user.id }" %></li>
-          <% end %>
           <li><%= link_to 'View posts', posts_path %></li>
           <li><%= link_to 'View images', images_path %></li>
-          <li><%= link_to 'About', about_path %></li>
-          <li><%= link_to 'Development Log', dev_log_path %></li>
+
+          <% if  @current_user.present? && @current_user.is_admin? %>
+            <li><%= link_to 'View users', users_path %></li>
+          <% end %>
         </ul>
 
-
+      <% if @current_user == nil %>
+        <%= render :partial => '/session/new' %>
+      <% else %>
+        <div class="btn-group navbar-right user-dropdown" role="group">
+          <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+            <%= @current_user.name.capitalize %>
+            <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="/users/<%= @current_user.id %>">My Profile</a></li>
+            <li><%= link_to 'My Library', "/libraries/#{ @current_user.id }" %></li>
+            <li class="divider"></li>
+            <li><%= link_to '+ Add Post', new_post_path %></li>
+            <li><%= link_to '+ Add Image', new_image_path %></li>
+            <li class="divider"></li>
+            <li><%= link_to 'Sign Out ' + @current_user.name.capitalize, login_path, :method => :delete %></li>
+          </ul>
+        </div>
+      <% end %>
     </div>
   </nav>
 

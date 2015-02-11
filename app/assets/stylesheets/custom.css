@@ -57,3 +57,13 @@ footer a:hover {
 .footer-bottom {
   padding-bottom: 150px;
 }
+
+.login-error {
+  color: #d70900;
+}
+
+.user-dropdown {
+  position: relative;
+  top: 8px;
+  right: 8px;
+}
