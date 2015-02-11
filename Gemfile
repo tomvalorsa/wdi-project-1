@@ -33,6 +33,11 @@ group :development do
  gem 'meta_request'
 end
 
+# image uploads
+gem 'carrierwave'
+gem 'cloudinary'
+gem 'mini_magick'
+
 gem 'rails_12factor', group: :production
 
 gem 'bootstrap-sass', '~> 3.3.3'
