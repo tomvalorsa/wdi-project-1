@@ -1,15 +1,21 @@
 <%= form_for @post do |f| %>
-  <%= f.label :title %>
-  <%= f.text_field :title, :autofocus => true %>
-
-  <%= f.label :codepen %>
-  <%= f.text_field :codepen, :required => true %>
-
-  <%= f.label :blurb %>
-  <%= f.text_area :blurb %>
-
-  <%= f.label :description %>
-  <%= f.text_area :description %>
-
-  <%= f.submit %>
+  <div class="form-group">
+    <%= f.label :title %>
+    <%= f.text_field :title, :autofocus => true, :class => "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :codepen %>
+    <%= f.text_field :codepen, :required => true, :class => "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :blurb %>
+    <%= f.text_area :blurb, :class => "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :description %>
+    <%= f.text_area :description, :class => "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.submit %>
+  </div>
 <% end %>

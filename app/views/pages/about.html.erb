@@ -18,4 +18,6 @@
 
 <p>Upload pictures of your own creations or cool things you've found around the web. Then try your hand at creating your own designs and upload your snippets here (via codepen)</p>
 
-<%= link_to 'Get Started', new_user_path %>
+<% if @current_user == nil %>
+  <%= link_to 'Get Started', new_user_path %>
+<% end %>

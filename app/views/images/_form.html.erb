@@ -1,20 +1,28 @@
 <%= form_for @image do |f| %>
+<div class="form-group">
   <%= f.label :title %>
-  <%= f.text_field :title, :autofocus => true %>
-
+  <%= f.text_field :title, :autofocus => true, :class => "form-control" %>
+</div>
+<div class="form-group">
   <%= f.label :source %>
-  <%= f.text_field :source, :required => true %>
-
+  <%= f.text_field :source, :required => true, :class => "form-control" %>
+</div>
+<div class="form-group">
   <%= f.label :description %>
-  <%= f.text_area :description %>
+  <%= f.text_area :description, :class => "form-control" %>
+</div>
 
-  <%= f.label :remote_image_url %>
-  <%= f.text_field :remote_image_url %>
-
+<!-- if this is fucking up it;s becayse I chnaged the labels -->
+<div class="form-group">
+  <%= f.label :Image_url %>
+  <%= f.text_field :remote_image_url, :class => "form-control" %>
+</div>
   <p>or</p>
-
-  <%= f.label :image %>
+<div class="form-group">
+  <%= f.label :Upload_an_image %>
   <%= f.file_field :image %>
-
+</div>
+<div class="form-group">
   <%= f.submit %>
+</div>
 <% end %>

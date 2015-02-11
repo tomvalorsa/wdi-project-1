@@ -40,7 +40,7 @@
 <!-- change this to divs so it looks nicer later -->
 <ul>
   <% @post.comments.each do |comment| %>
-    <li><p><%= comment.user.name.capitalize %> - posted at xpm</p>
+    <li><p><a href="<%= "/users/#{comment.user_id}" %>"><%= comment.user.name.capitalize %></a> - posted at <%= comment.created_at %></p>
     <p><%= comment.text %></p></li>
   <% end %>
 </ul>
