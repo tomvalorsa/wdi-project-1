@@ -25,7 +25,7 @@
 <!-- logic below probably shouldn't be there...fix this -->
 
 <% @author = User.find(@post.user_id) %>
-<p>Author: <a href="<%= "/users/#{@post.user_id}" %>"><%= @author.name %></a></p>
+<p>Posted by: <a href="<%= "/users/#{@post.user_id}" %>"><%= @author.name %></a></p>
 
 <!-- seems to work, try to break this -->
 <iframe height='350' scrolling='no' src='<%= @post.codepen_embed %>' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>
@@ -40,13 +40,17 @@
 <!-- change this to divs so it looks nicer later -->
 <ul>
   <% @post.comments.each do |comment| %>
-    <li><p><a href="<%= "/users/#{comment.user_id}" %>"><%= comment.user.name.capitalize %></a> - posted at <%= comment.created_at %></p>
-    <p><%= comment.text %></p></li>
+    <li>
+      <p><a href="<%= "/users/#{comment.user_id}" %>"><%= comment.user.name.capitalize %></a> - posted at <%= comment.created_at %></p>
+      <% if @current_user != nil && (@current_user.is_admin? || @current_user.id == @post.user_id) %>
+        <%= link_to 'Delete', comment_path, :method => :delete %>
+      <% end %>
+      <p><%= comment.text %></p>
+    </li>
   <% end %>
 </ul>
 
-<%= render :partial => 'comment_form' %>
-
-
-
+<% if @current_user.present? %>
+  <%= render :partial => 'comment_form' %>
+<% end %>
 
