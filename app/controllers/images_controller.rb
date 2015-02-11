@@ -30,7 +30,11 @@ class ImagesController < ApplicationController
   def destroy
     image = Image.find params[:id]
     image.destroy
-    redirect_to library_path
+    if @current_user.is_admin?
+      redirect_to images_path
+    else
+      redirect_to library_path
+    end
   end
 
   private

@@ -11,6 +11,7 @@
 #  created_at    :datetime
 #  updated_at    :datetime
 #  codepen_embed :text
+#  blurb         :text
 #
 
 class Post < ActiveRecord::Base
@@ -18,6 +19,6 @@ class Post < ActiveRecord::Base
   belongs_to :user
 
   def self.search(query)
-    where("title like ?", "%#{query}%")
+    where("title ilike ?", "%#{query}%")
   end
 end

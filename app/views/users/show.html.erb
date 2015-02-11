@@ -1,7 +1,14 @@
 <h1>This is <%= @user.name %>'s profile page</h1>
 
 <h2>Info:</h2>
-<%= link_to 'Edit profile', edit_user_path %>
+
+<% if @current_user.id == @user.id %>
+  <%= link_to 'Edit profile', edit_user_path, :class => "btn btn-warning" %>
+<% end %>
+
+<% if @current_user.is_admin? %>
+  <%= link_to 'Delete user', @user, :method => 'delete', :data => {:confirm => 'Are you sure, admin?'}, :class => "btn btn-danger" %>
+<% end %>
 
 <p>Name: <%= @user.name %></p>
 <p>Email: <%= @user.email %></p>
@@ -18,3 +25,4 @@
     <% end %>
   </ul>
 <% end %>
+
