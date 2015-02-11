@@ -15,8 +15,11 @@
   <% end %>
 <% end %>
 
-<% if @current_user.is_admin? %>
-  <%= link_to 'Delete post', @post, :method => 'delete', :data => {:confirm => 'Are you sure, admin?'}, :class => "btn btn-danger" %>
+
+<% unless @current_user == nil %>
+  <% if @current_user.is_admin? %>
+    <%= link_to 'Delete post', @post, :method => 'delete', :data => {:confirm => 'Are you sure, admin?'}, :class => "btn btn-danger" %>
+  <% end %>
 <% end %>
 
 <!-- logic below probably shouldn't be there...fix this -->
