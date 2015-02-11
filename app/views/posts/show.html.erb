@@ -36,3 +36,17 @@
 
 <h2>Description:</h2>
 <p><%= @post.description %></p>
+
+<!-- change this to divs so it looks nicer later -->
+<ul>
+  <% @post.comments.each do |comment| %>
+    <li><p><%= comment.user.name.capitalize %> - posted at xpm</p>
+    <p><%= comment.text %></p></li>
+  <% end %>
+</ul>
+
+<%= render :partial => 'comment_form' %>
+
+
+
+

@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
   get '/search' => 'posts#search'
 
-  resources :users, :posts, :images
+  resources :users, :posts, :images, :comments
   # change below to only certain resources (e.g. can't delete a library)
   resources :libraries
 

@@ -17,6 +17,7 @@ class User < ActiveRecord::Base
   has_one :library
   has_many :posts
   has_many :images
+  has_many :comments
   has_secure_password
 
   validates :name, :uniqueness => true, :presence => true
