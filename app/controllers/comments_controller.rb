@@ -10,9 +10,6 @@ class CommentsController < ApplicationController
     redirect_to "/posts/#{ comment.post_id }"
   end
 
-  def show
-  end
-
   def destroy
     comment = Comment.find_by(:post_id => params[:id])
     post_id = comment.post_id

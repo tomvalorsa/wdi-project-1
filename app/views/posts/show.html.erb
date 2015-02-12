@@ -45,7 +45,7 @@
   <% @post.comments.each do |comment| %>
     <div class="row">
       <div class="col-md-6 col-md-offset-3 comment-box">
-          <p><a href="<%= "/users/#{comment.user_id}" %>"><%= comment.user.name.capitalize %></a> - posted at <%= comment.created_at %></p>
+          <p><a href="<%= "/users/#{comment.user_id}" %>"><%= comment.user.name.capitalize %></a><%= comment.created_at.strftime(" - posted on %m/%d/%Y") %><%= comment.created_at.strftime(" at %I:%M%p")   %></p>
           <p>
             <%= comment.text %>
           </p>

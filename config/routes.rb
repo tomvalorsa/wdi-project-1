@@ -1,13 +1,12 @@
 Rails.application.routes.draw do
   root :to => 'images#index'
   get '/about' => 'pages#about'
-  get '/dev_log' => 'pages#dev_log'
 
   get '/search' => 'posts#search'
 
-  resources :users, :posts, :images, :comments
-  # change below to only certain resources (e.g. can't delete a library)
-  resources :libraries
+  resources :users, :posts, :images
+  resources :libraries, :only => [:show]
+  resources :comments, :only => [:new, :create, :destroy]
 
   get '/login' => 'session#new'
   post '/login' => 'session#create'
@@ -25,8 +24,4 @@ Rails.application.routes.draw do
   post '/images/:id/remove_from_library' =>  'libraries#remove_image'
   get '/library/images/:id' =>  'libraries#show_image'
   post '/library/images/:id/remove_from_library' => 'libraries#remove_image_from_lib'
-
-
-  # need to check if the first remove from libraries are necesary!
-  # look for old, unused routes
 end
