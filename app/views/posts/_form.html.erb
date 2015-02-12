@@ -1,3 +1,5 @@
+<h2>New Code Snippet</h2>
+
 <%= form_for @post do |f| %>
   <div class="form-group">
     <%= f.label :title %>
@@ -8,14 +10,12 @@
     <%= f.text_field :codepen, :required => true, :class => "form-control" %>
   </div>
   <div class="form-group">
-    <%= f.label :blurb %>
-    <%= f.text_area :blurb, :class => "form-control" %>
-  </div>
-  <div class="form-group">
     <%= f.label :description %>
     <%= f.text_area :description, :class => "form-control" %>
   </div>
+  <br>
   <div class="form-group">
-    <%= f.submit %>
+    <%= f.submit "Post snippet", :class => "btn btn-signin" %>
+
   </div>
 <% end %>

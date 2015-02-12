@@ -1,21 +1,26 @@
 <div class="row">
   <h1 class="col-md-9 profile-name"><%= @user.name.capitalize %></h1>
-  <% if @current_user.is_admin? %>
-  <%= link_to 'Delete user', @user, :method => 'delete', :data => {:confirm => 'Are you sure, admin?'}, :class => "btn btn-danger col-md-1 profile-delete" %>
-  <% end %>
 
+</div>
+
+
+<div class="rule"></div>
+
+<div class="row">
     <% if @current_user.id == @user.id %>
       <% if @current_user.is_admin? %>
         <%= link_to 'Edit profile', edit_user_path, :class => "btn btn-warning col-md-1 profile-edit" %>
       <% else %>
-        <%= link_to 'Edit profile', edit_user_path, :class => "btn btn-warning col-md-2 profile-edit" %>
+        <%= link_to 'Edit profile', edit_user_path, :class => "btn btn-warning col-md-1 profile-edit" %>
       <% end %>
+    <% end %>
+    <% if @current_user.is_admin? %>
+      <%= link_to 'Delete user', @user, :method => 'delete', :data => {:confirm => 'Are you sure, admin?'}, :class => "btn btn-danger col-md-1 profile-delete" %>
     <% end %>
 
 
 </div>
 
-<div class="rule"></div>
 <br>
 <div class="row">
   <div class="col-md-5">

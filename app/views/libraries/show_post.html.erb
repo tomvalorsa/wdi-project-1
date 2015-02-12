@@ -5,7 +5,7 @@
   <%= link_to 'Edit post', edit_post_path, :class => "btn btn-warning" %>
   <%= link_to 'Delete post', @post, :method => 'delete', :data => {:confirm => 'This will also remove the post from your library. Are you sure?'}, :class => "btn btn-danger" %>
 <% end %>
-</div>
+
 
 
 <!-- should redirect back to the library index -->
@@ -15,10 +15,11 @@
       <i class="glyphicon glyphicon-minus"></i> Remove from Library
     <% end %>
 <% end %>
+</div>
 <!-- logic below probably shouldn't be there...fix this -->
 
 <% @author = User.find(@post.user_id) %>
-<p>Author: <%= @author.name %></p>
+<p>Posted by: <a href="<%= "/users/#{@post.user_id}" %>"><%= @author.name.capitalize %></a></p>
 
 
 <!-- get the user to paste in the original link, save that for the a, but sub out pen for embed for the iframe src -->

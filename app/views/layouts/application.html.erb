@@ -20,7 +20,9 @@
           <li><a href="<%= images_path %>"><span class="glyphicon glyphicon-picture"></span></a></li>
           <% if  @current_user.present? && @current_user.is_admin? %>
             <li><a href="<%= users_path %>"><span class="glyphicon glyphicon-user"></span></a></li>
+
           <% end %>
+            <a class="navbar-brand" href="<%= root_path %>"><span class="snip">snip</span><span class="braces">{</span><span class="it">it</span><span class="braces">}</span></a>
         </ul>
 
       <% if @current_user == nil %>

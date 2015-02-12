@@ -1,3 +1,5 @@
+<h2>Add Image</h2>
+
 <%= form_for @image do |f| %>
   <div class="form-group">
     <%= f.label :title %>
@@ -25,8 +27,8 @@
     <%= f.label :Upload_an_image %>
     <%= f.file_field :image %>
   </div>
-
+  <br>
   <div class="form-group">
-    <%= f.submit %>
+    <%= f.submit "Post Image", :class => "btn btn-signin" %>
   </div>
 <% end %>

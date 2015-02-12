@@ -1,8 +1,8 @@
-@import url(https://fonts.googleapis.com/css?family=Roboto:400,400italic,700);
+@import url(http://fonts.googleapis.com/css?family=Nobile:400,700,400italic);
 
 body {
   background-image: asset-url('pw_maze_white.png');
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Nobile', sans-serif;
   position: relative;
 }
 
@@ -32,6 +32,13 @@ img {
 
 .btn-signin {
   background-color: #1ABC9C;
+  color: white;
+}
+
+
+
+.btn-signin:hover {
+  background-color: #17987E;
 }
 
 .img-grid {
@@ -113,7 +120,7 @@ body > .main-content { height: auto; min-height: 95%; }
 }
 
 .sign-up-container {
-  background-color: lightblue;
+  background-color: #815BA4;
   border-radius: 5px;
   width: 400px;
   margin-top: 7em;
@@ -130,18 +137,18 @@ body > .main-content { height: auto; min-height: 95%; }
 }
 
 .rule {
-  border: 1.5px solid black;
+  border: 1px solid black;
   width: 50%;
 }
 
 .profile-delete {
   margin-top: 17px;
-  margin-left: 81px;
+  margin-left: 14px;
 }
 
 .profile-edit {
     margin-top: 17px;
-    margin-left: 10px;
+    margin-left: 14px;
 }
 
 .profile-name {
@@ -168,6 +175,7 @@ body > .main-content { height: auto; min-height: 95%; }
   border-radius: 5px;
   margin-bottom: 10px;
   background-color: #fff;
+  padding: 1em;
 }
 
 .image-description-panel {
@@ -184,5 +192,39 @@ body > .main-content { height: auto; min-height: 95%; }
 }
 
 .lib-show-image-panel {
+  margin-top: 15px;
+}
+
+.login-fields {
+  position: relative;
+  top: 2px;
+}
+
+.navbar-brand {
+  padding-left: 485px;
+  font-size: 32px;
+  text-shadow: 1.5px 1.5px 0 #000;
+}
+
+.title-text {
+    text-shadow: 2px 2px 0 #000;
+}
+
+/*.glyphicon-search {
+  margin-top: 3px;
+}*/
+
+.formbox {
+  background-color: #815BA4;
+  margin-top: 4em;
+  padding: 2em;
+  border-radius: 5px;
+}
+
+.formbox-image {
+  margin-top: 2em;
+}
+
+.search-back {
   margin-top: 15px;
 }

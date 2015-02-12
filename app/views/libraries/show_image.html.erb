@@ -15,7 +15,7 @@
 <!-- logic below probably shouldn't be there...fix this -->
 
 <% @author = User.find(@image.user_id) %>
-<p>Author: <%= @author.name %></p>
+<p>Posted by: <a href="<%= "/users/#{@image.user_id}" %>"><%= @author.name.capitalize %></a></p>
 
 <p>Source: <%= @image.source %></p>
 

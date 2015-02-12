@@ -1,6 +1,6 @@
 <h2><%= @post.title %></h2>
 <% @author = User.find(@post.user_id) %>
-<p>Posted by: <a href="<%= "/users/#{@post.user_id}" %>"><%= @author.name %></a></p>
+<p>Posted by: <a href="<%= "/users/#{@post.user_id}" %>"><%= @author.name.capitalize %></a></p>
 
 <div class="post-nav">
   <%= link_to 'Back to posts', posts_path, :class => 'btn btn-default' %>
