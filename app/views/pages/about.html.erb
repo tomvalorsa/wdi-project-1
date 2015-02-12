@@ -1,22 +1,16 @@
 <h2>About</h2>
 
-<h3>Main Features</h3>
-<ul>
-  <li>User can make account</li>
-  <li>User has a library</li>
-  <li>User can post content</li>
-  <li>User can edit and delete their own content</li>
-  <li>User's own content is automatically added to their library</li>
-  <li>User can add content produced by other users to their library</li>
-  <li>User can view library and remove other users' content from their list if they change their mind</li>
-</ul>
+<br>
 
-<p>Browse the images for inspiration and favourite the ones you like, get an inspiration album going. If you see something you like around the web you can even upload your own.</p>
+<p><b>Snip{it}</b> was made to foster creativity. We subscribe to the philosphy of <a href="http://bradfrost.com/blog/post/atomic-web-design/">'Atomic Design'</a>, by which an 'atom' is a small component of a website that, when combined with other atoms, becomes part of a larger organism. Put simply, we believe in building websites piece by piece.</p>
 
-<p>Once you've had a look at the images, try your hand at uploading your own atoms via codepen. Simply paste your codepen's pen url in a new post and your code will be embedded here for others to see/favourite.</p>
+<br>
 
+<p>Users can upload images of atoms they find around the web to add to a growing, crowd-sourced inspiration album. Once you've had a look at the album you can try your hand at crafting your own atoms via <a href="http://codepen.io">Codepen</a>. Simply paste in the link to your pen and your design will be added to the list of community-made atoms.</p>
 
-<p>Upload pictures of your own creations or cool things you've found around the web. Then try your hand at creating your own designs and upload your snippets here (via codepen)</p>
+<br>
+
+<p>You can deconstruct the work of others to see how site components are made, and even take the code for yourself. All of the code is ready and waiting to be deployed to a project of your own.</p>
 
 <% if @current_user == nil %>
   <%= link_to 'Get Started', new_user_path %>
@@ -27,5 +21,5 @@
 
 <i>
 <p>Disclaimer:</p>
-<p>All Codepen pens and images that were not produced by myself were used solely for educational purposes. They have been used to populate my site and give an idea of how it would look with numerous content postings. No copyright infringement was intended.</p>
+  <p>All Codepen pens and images that were not produced by myself were used solely for educational purposes. They have been used to populate my site and give an idea of how it would look with numerous content postings. No copyright infringement was intended.</p>
 </i>
