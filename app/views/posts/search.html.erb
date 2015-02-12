@@ -1,28 +1,28 @@
 <div class="text-right">
   <div class="col-md-3 col-md-offset-9">
-  <%= form_tag("/search", :method => "get", id: "search-form") do %>
-    <div class="input-group">
-      <%= text_field_tag :search, params[:search], placeholder: "Search Posts", :class => "form-control" %>
-      <span class="input-group-btn">
-        <button class="btn btn-default" type="button"><i class="glyphicon glyphicon-search"></i></button>
-      </span>
-    </div>
+    <%= form_tag("/search", :method => "get", id: "search-form") do %>
+      <div class="input-group">
+        <%= text_field_tag :search, params[:search], placeholder: "Search Posts", :class => "form-control" %>
+        <span class="input-group-btn">
+          <button class="btn btn-default" type="button"><i class="glyphicon glyphicon-search"></i></button>
+        </span>
+      </div>
     <% end %>
   </div>
 </div>
+
 <h2>Search Results:</h2>
+
 <ul>
   <% @posts.each do |post| %>
     <li><%= link_to post.title, "/posts/#{ post.id }" %></li>
   <% end %>
 </ul>
 
-
 <% if @posts.length == 0 %>
   <div class="alert alert-danger" role="alert">
     <p>Sorry, there are no results. Please try again.</p>
   </div>
 <% end %>
-
 
 <%= link_to 'Back to posts', posts_path, :class => 'btn btn-signin search-back' %>

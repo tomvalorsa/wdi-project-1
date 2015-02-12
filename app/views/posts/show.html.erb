@@ -1,17 +1,16 @@
 <h2><%= @post.title %></h2>
+
 <% @author = User.find(@post.user_id) %>
 <p>Posted by: <a href="<%= "/users/#{@post.user_id}" %>"><%= @author.name.capitalize %></a></p>
 
 <div class="post-nav">
   <%= link_to 'Back to posts', posts_path, :class => 'btn btn-default' %>
-
   <% if @current_user.present? && (@post.user_id != @current_user.id) %>
     <% unless @current_user.library.posts.include? @post %>
       <%= link_to "/posts/#{ @post.id }/add_to_library", :method => :post, :class => "btn btn-success" do %>
           <i class="glyphicon glyphicon-plus"></i> Add to Library
       <% end %>
     <% else %>
-    <!-- remove from lib here should redirect to the list of posts (index) -->
       <%= link_to "/posts/#{ @post.id }/remove_from_library", :method => :post, :class => "btn btn-danger" do %>
         <i class="glyphicon glyphicon-minus"></i> Remove from Library
       <% end %>
@@ -24,13 +23,8 @@
     <% end %>
   <% end %>
 </div>
-<!-- logic below probably shouldn't be there...fix this -->
 
-
-
-<!-- seems to work, try to break this -->
-<iframe height='350' scrolling='no' src='<%= @post.codepen_embed %>' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>
-</iframe>
+<iframe height='350' scrolling='no' src='<%= @post.codepen_embed %>' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'></iframe>
 
 <div class="panel panel-default">
   <div class="panel-heading">
@@ -42,11 +36,11 @@
 </div>
 
 <% if @current_user.present? %>
-<div class="col-md-6 col-md-offset-3">
-<h2>Comments</h2>
-</div>
+  <div class="col-md-6 col-md-offset-3">
+    <h2>Comments</h2>
+  </div>
 <% end %>
-<!-- change this to divs so it looks nicer later -->
+
 <div class="container">
   <% @post.comments.each do |comment| %>
     <div class="row">
@@ -63,9 +57,6 @@
   <% end %>
 </div>
 
-
-
 <% if @current_user.present? %>
   <%= render :partial => 'comment_form' %>
 <% end %>
-

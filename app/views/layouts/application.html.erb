@@ -9,21 +9,16 @@
   <link rel="stylesheet" href="/assets/font-awesome.min.css">
 </head>
 <body>
-
   <nav class="navbar navbar-default header-nav">
     <div class="container-fluid">
-
-
-      <!-- add in the logo and make it a link to the homepage -->
-        <ul class="nav navbar-nav">
-          <li><a href="<%= posts_path %>">&lt;&#47;&gt;</a></li>
-          <li><a href="<%= images_path %>"><span class="glyphicon glyphicon-picture"></span></a></li>
-          <% if  @current_user.present? && @current_user.is_admin? %>
-            <li><a href="<%= users_path %>"><span class="glyphicon glyphicon-user"></span></a></li>
-
-          <% end %>
-            <a class="navbar-brand" href="<%= root_path %>"><span class="snip">snip</span><span class="braces">{</span><span class="it">it</span><span class="braces">}</span></a>
-        </ul>
+      <ul class="nav navbar-nav">
+        <li><a href="<%= posts_path %>">&lt;&#47;&gt;</a></li>
+        <li><a href="<%= images_path %>"><span class="glyphicon glyphicon-picture"></span></a></li>
+        <% if  @current_user.present? && @current_user.is_admin? %>
+          <li><a href="<%= users_path %>"><span class="glyphicon glyphicon-user"></span></a></li>
+        <% end %>
+        <a class="navbar-brand" href="<%= root_path %>"><span class="snip">snip</span><span class="braces">{</span><span class="it">it</span><span class="braces">}</span></a>
+      </ul>
 
       <% if @current_user == nil %>
         <%= render :partial => '/session/new' %>
@@ -36,11 +31,8 @@
           <ul class="dropdown-menu" role="menu">
             <li><a href="/users/<%= @current_user.id %>"><span class="glyphicon glyphicon-user"></span>  My Profile</a></li>
             <li><a href="<%= "/libraries/#{ @current_user.id }" %>"><span class="glyphicon glyphicon-book"></span>  My Library</a></li>
-
-
-
             <li class="divider"></li>
-            <li><%= link_to '+ Add Post', new_post_path %></li>
+            <li><%= link_to '+ Add Snippet', new_post_path %></li>
             <li><%= link_to '+ Add Image', new_image_path %></li>
             <li class="divider"></li>
             <li><%= link_to 'Sign Out ' + @current_user.name.capitalize, login_path, :method => :delete %></li>
@@ -49,7 +41,6 @@
       <% end %>
     </div>
   </nav>
-
 
   <div class="container main-content">
     <%= yield %>
@@ -65,6 +56,5 @@
       <p>&copy; 2015 Tom Valorsa</p>
     </div>
   </div>
-
 </body>
 </html>

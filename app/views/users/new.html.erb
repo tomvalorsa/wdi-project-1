@@ -1,36 +1,36 @@
 <div class="container sign-up-container animated pulse">
   <div class="details">
-  <div class="row sign-up">
-    <div class="col-md-12 text-center">
-      <h2>Sign up</h2>
+    <div class="row sign-up">
+      <div class="col-md-12 text-center">
+        <h2>Sign up</h2>
+      </div>
     </div>
-  </div>
-  <% if @user.errors.any? %>
-    <ol>
-      <% @user.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-    </ol>
-  <% end %>
-
-  <div class="row">
-    <%= form_for @user do |f| %>
-      <div class="form-group col-md-12">
-          <%= f.text_field :name, :autofocus => :true, :class => "form-control", :placeholder => "Name" %>
-      </div>
-      <div class="form-group col-md-12">
-        <%= f.text_field :email, :class => "form-control", :placeholder => "Email" %>
-      </div>
-      <div class="form-group col-md-12">
-        <%= f.password_field :password, :class => "form-control", :placeholder => "Password" %>
-      </div>
-      <div class="form-group col-md-12">
-        <%= f.password_field :password_confirmation, :class => "form-control", :placeholder => "Password Confirmation" %>
-      </div>
-      <div class="form-group col-md-12 text-center">
-        <%= f.submit :class => "btn btn-signin", :value => "Go!" %>
-      </div>
+    <% if @user.errors.any? %>
+      <ol>
+        <% @user.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ol>
     <% end %>
-  </div>
+
+    <div class="row">
+      <%= form_for @user do |f| %>
+        <div class="form-group col-md-12">
+            <%= f.text_field :name, :autofocus => :true, :class => "form-control", :placeholder => "Name" %>
+        </div>
+        <div class="form-group col-md-12">
+          <%= f.text_field :email, :class => "form-control", :placeholder => "Email" %>
+        </div>
+        <div class="form-group col-md-12">
+          <%= f.password_field :password, :class => "form-control", :placeholder => "Password" %>
+        </div>
+        <div class="form-group col-md-12">
+          <%= f.password_field :password_confirmation, :class => "form-control", :placeholder => "Password Confirmation" %>
+        </div>
+        <div class="form-group col-md-12 text-center">
+          <%= f.submit :class => "btn btn-signin", :value => "Go!" %>
+        </div>
+      <% end %>
+    </div>
   </div>
 </div>

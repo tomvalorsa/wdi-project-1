@@ -1,7 +1,5 @@
 class PostsController < ApplicationController
   def index
-    # need to sort this out as it separated capital and lower case letters
-    # could do this by forcing the user input to downcase, sorting it here and then capitalizing it on the view
     @posts = Post.all.order(:title)
   end
 
@@ -43,7 +41,6 @@ class PostsController < ApplicationController
 
       @post.update(:codepen_embed => x)
       redirect_to "/library/posts/#{ @post.id }"
-
     end
   end
 

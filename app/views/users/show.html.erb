@@ -1,40 +1,35 @@
 <div class="row">
   <h1 class="col-md-9 profile-name"><%= @user.name.capitalize %></h1>
-
 </div>
-
 
 <div class="rule"></div>
 
 <div class="row">
-    <% if @current_user.id == @user.id %>
-      <% if @current_user.is_admin? %>
-        <%= link_to 'Edit profile', edit_user_path, :class => "btn btn-warning col-md-1 profile-edit" %>
-      <% else %>
-        <%= link_to 'Edit profile', edit_user_path, :class => "btn btn-warning col-md-1 profile-edit" %>
-      <% end %>
-    <% end %>
+  <% if @current_user.id == @user.id %>
     <% if @current_user.is_admin? %>
-      <%= link_to 'Delete user', @user, :method => 'delete', :data => {:confirm => 'Are you sure, admin?'}, :class => "btn btn-danger col-md-1 profile-delete" %>
+      <%= link_to 'Edit profile', edit_user_path, :class => "btn btn-warning col-md-1 profile-edit" %>
+    <% else %>
+      <%= link_to 'Edit profile', edit_user_path, :class => "btn btn-warning col-md-1 profile-edit" %>
     <% end %>
-
-
+  <% end %>
+  <% if @current_user.is_admin? %>
+    <%= link_to 'Delete user', @user, :method => 'delete', :data => {:confirm => 'Are you sure, admin?'}, :class => "btn btn-danger col-md-1 profile-delete" %>
+  <% end %>
 </div>
 
 <br>
+
 <div class="row">
   <div class="col-md-5">
-  <% if @user.image == nil %>
-    <p>You haven't got a profile picture. Edit your profile to add one.</p>
-  <% else %>
-    <img src="<%= @user.image %>" alt="" class="img-circle">
-  <% end %>
+    <% if @user.image == nil %>
+      <p>You haven't got a profile picture. Edit your profile to add one.</p>
+    <% else %>
+      <img src="<%= @user.image %>" alt="" class="img-circle">
+    <% end %>
   </div>
 
   <div class="col-md-6 col-md-offset-1">
-    <!-- does the list of posts have to go in here? -->
     <h3>Snippets created by <%= @user.name.capitalize %>:</h3>
-
     <% if @user.posts.length == 0 %>
       <p>This user has not submitted any code snippets</p>
     <% else %>
@@ -44,10 +39,6 @@
         <% end %>
       </ul>
     <% end %>
-
-
-
-
   </div>
 </div>
 
@@ -65,5 +56,3 @@
     </div>
   </div>
 </div>
-
-
