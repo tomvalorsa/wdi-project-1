@@ -1,4 +1,4 @@
-@import url(http://fonts.googleapis.com/css?family=Roboto:400,400italic,700);
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,400italic,700);
 
 body {
   background-color: #F2F0EC;
@@ -7,7 +7,7 @@ body {
 }
 
 .jumbotron {
-  background-image: url('gradient.jpg');
+  background-image: url('/assets/gradient.jpg');
 }
 
 .navbar {
