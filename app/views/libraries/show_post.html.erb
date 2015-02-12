@@ -1,11 +1,11 @@
 <h2><%= @post.title %></h2>
-
+<div class="post-nav">
 <%= link_to 'Back to Library', library_path, :class => 'btn btn-default' %>
 <% if @current_user.present? && @post.user_id == @current_user.id %>
   <%= link_to 'Edit post', edit_post_path, :class => "btn btn-warning" %>
   <%= link_to 'Delete post', @post, :method => 'delete', :data => {:confirm => 'This will also remove the post from your library. Are you sure?'}, :class => "btn btn-danger" %>
 <% end %>
-
+</div>
 
 
 <!-- should redirect back to the library index -->

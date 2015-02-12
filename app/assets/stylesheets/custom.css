@@ -1,7 +1,7 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:400,400italic,700);
 
 body {
-  background-color: #F2F0EC;
+  background-image: asset-url('pw_maze_white.png');
   font-family: 'Roboto', sans-serif;
   position: relative;
 }
@@ -11,7 +11,7 @@ body {
 }
 
 .navbar {
-  background-color: #515151;
+  background-color: #b4b3b4;
 }
 
 .nav-link a {
@@ -28,6 +28,10 @@ body {
 img {
   width: 100%;
 
+}
+
+.btn-signin {
+  background-color: #1ABC9C;
 }
 
 .img-grid {
@@ -76,8 +80,12 @@ img {
  z-index: 10;
  height: 5em;
  margin-top: -3em;
- background-color: #515151;
+ background-color: #b4b3b4;
  color: white;
+}
+
+#footer a {
+  color: white;
 }
 
 .main-content {
