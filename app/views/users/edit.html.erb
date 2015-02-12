@@ -1,27 +1,29 @@
-<div class="col-md-12 text-center">
-  <h2>Edit <%= @current_user.name.capitalize %>'s profile</h2>
-</div>
+<div class="formbox animated pulse">
+  <div class="col-md-12 text-center">
+    <h2>Edit <%= @current_user.name.capitalize %>'s profile</h2>
+  </div>
 
-<div class="edit-profile">
-  <%= form_for @current_user, :html => { :class => "form-horizontal" } do |f| %>
-    <div class="form-group">
-      <%= f.label :image, :class => "col-sm-2 control-label" %>
-      <div class="col-sm-10">
-      <%= f.url_field :image, :class => "form-control" %>
+  <div class="edit-profile">
+    <%= form_for @current_user, :html => { :class => "form-horizontal" } do |f| %>
+      <div class="form-group">
+        <%= f.label :image, :class => "col-sm-2 control-label" %>
+        <div class="col-sm-10">
+        <%= f.url_field :image, :class => "form-control" %>
+        </div>
       </div>
-    </div>
 
-    <div class="form-group">
-      <%= f.label :bio, :class => "col-sm-2 control-label" %>
-      <div class="col-sm-10">
-      <%= f.text_area :bio, :class => "form-control" %>
+      <div class="form-group">
+        <%= f.label :bio, :class => "col-sm-2 control-label" %>
+        <div class="col-sm-10">
+        <%= f.text_area :bio, :class => "form-control" %>
+        </div>
       </div>
-    </div>
 
-    <div class="form-group">
-      <div class="col-sm-offset-2 col-sm-10">
-        <%= f.submit 'Update profile', :class => "btn btn-primary" %>
+      <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+          <%= f.submit 'Update profile', :class => "btn btn-signin" %>
+        </div>
       </div>
-    </div>
-  <% end %>
+    <% end %>
+  </div>
 </div>
