@@ -7,7 +7,7 @@ body {
 }
 
 .jumbotron {
-  background-image: url('/assets/gradient.jpg');
+  background-image: asset-url('gradient.jpg');
 }
 
 .navbar {
