@@ -82,6 +82,7 @@ img {
 
 .main-content {
   padding-bottom: 5em;
+
 }
 
 html, body, .main-content { height: 95%; }
@@ -172,4 +173,8 @@ body > .main-content { height: auto; min-height: 95%; }
 
 .navbar-default .navbar-nav li a {
   color: white;
+}
+
+.lib-show-image-panel {
+  margin-top: 15px;
 }

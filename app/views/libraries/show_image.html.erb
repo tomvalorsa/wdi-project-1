@@ -23,5 +23,12 @@
 <img src="<%= @image.image_url %>" alt="">
 
 
-<h2>Description:</h2>
-<p><%= @image.description %></p>
+
+<div class="panel panel-default lib-show-image-panel">
+  <div class="panel-heading">
+    <h3 class="panel-title">Description</h3>
+  </div>
+  <div class="panel-body">
+      <p><%= @image.description %></p>
+  </div>
+</div>
