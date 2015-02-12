@@ -10,11 +10,11 @@
     <% end %>
   </div>
 </div>
-<h1 class="text-center">Code Snippets</h1>
+<h1 class="text-center animated fadeInLeftBig">Code Snippets</h1>
 
 <!-- make a list of posts here for the time being, sort out picture grid later -->
 
-<div class="col-md-6 col-md-offset-3">
+<div class="col-md-6 col-md-offset-3 animated fadeInLeft">
 <ul class="list-group">
   <% @posts.each do |post| %>
   <% @author = User.find(post.user_id) %>

@@ -228,3 +228,18 @@ body > .main-content { height: auto; min-height: 95%; }
 .search-back {
   margin-top: 15px;
 }
+
+.lib-rule {
+  border: 1px solid black;
+  width: 75%;
+  position: relative;
+  left: -14px;
+}
+
+.image-label {
+  margin-top: 4em;
+}
+
+.code-label {
+  margin-top: 1.5em;
+}
