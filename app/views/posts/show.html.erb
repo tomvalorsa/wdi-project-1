@@ -1,54 +1,68 @@
 <h2><%= @post.title %></h2>
-
-<%= link_to 'Back to posts', posts_path, :class => 'btn btn-default' %>
-
-<% if @current_user.present? && (@post.user_id != @current_user.id) %>
-  <% unless @current_user.library.posts.include? @post %>
-    <%= link_to "/posts/#{ @post.id }/add_to_library", :method => :post, :class => "btn btn-success" do %>
-        <i class="glyphicon glyphicon-plus"></i> Add to Library
-    <% end %>
-  <% else %>
-  <!-- remove from lib here should redirect to the list of posts (index) -->
-    <%= link_to "/posts/#{ @post.id }/remove_from_library", :method => :post, :class => "btn btn-danger" do %>
-      <i class="glyphicon glyphicon-minus"></i> Remove from Library
-    <% end %>
-  <% end %>
-<% end %>
-
-
-<% unless @current_user == nil %>
-  <% if @current_user.is_admin? %>
-    <%= link_to 'Delete post', @post, :method => 'delete', :data => {:confirm => 'Are you sure, admin?'}, :class => "btn btn-danger" %>
-  <% end %>
-<% end %>
-
-<!-- logic below probably shouldn't be there...fix this -->
-
 <% @author = User.find(@post.user_id) %>
 <p>Posted by: <a href="<%= "/users/#{@post.user_id}" %>"><%= @author.name %></a></p>
+
+<div class="post-nav">
+  <%= link_to 'Back to posts', posts_path, :class => 'btn btn-default' %>
+
+  <% if @current_user.present? && (@post.user_id != @current_user.id) %>
+    <% unless @current_user.library.posts.include? @post %>
+      <%= link_to "/posts/#{ @post.id }/add_to_library", :method => :post, :class => "btn btn-success" do %>
+          <i class="glyphicon glyphicon-plus"></i> Add to Library
+      <% end %>
+    <% else %>
+    <!-- remove from lib here should redirect to the list of posts (index) -->
+      <%= link_to "/posts/#{ @post.id }/remove_from_library", :method => :post, :class => "btn btn-danger" do %>
+        <i class="glyphicon glyphicon-minus"></i> Remove from Library
+      <% end %>
+    <% end %>
+  <% end %>
+
+  <% unless @current_user == nil %>
+    <% if @current_user.is_admin? %>
+      <%= link_to 'Delete post', @post, :method => 'delete', :data => {:confirm => 'Are you sure, admin?'}, :class => "btn btn-danger" %>
+    <% end %>
+  <% end %>
+</div>
+<!-- logic below probably shouldn't be there...fix this -->
+
+
 
 <!-- seems to work, try to break this -->
 <iframe height='350' scrolling='no' src='<%= @post.codepen_embed %>' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>
 </iframe>
 
-<h2>Info:</h2>
-<p><%= @post.blurb %></p>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Description</h3>
+  </div>
+  <div class="panel-body">
+      <p><%= @post.description %></p>
+  </div>
+</div>
 
-<h2>Description:</h2>
-<p><%= @post.description %></p>
 
+<div class="col-md-6 col-md-offset-3">
+<h2>Comments</h2>
+</div>
 <!-- change this to divs so it looks nicer later -->
-<ul>
+<div class="container">
   <% @post.comments.each do |comment| %>
-    <li>
-      <p><a href="<%= "/users/#{comment.user_id}" %>"><%= comment.user.name.capitalize %></a> - posted at <%= comment.created_at %></p>
-      <% if @current_user != nil && (@current_user.is_admin? || @current_user.id == @post.user_id) %>
-        <%= link_to 'Delete', comment_path, :method => :delete %>
-      <% end %>
-      <p><%= comment.text %></p>
-    </li>
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3 comment-box">
+          <p><a href="<%= "/users/#{comment.user_id}" %>"><%= comment.user.name.capitalize %></a> - posted at <%= comment.created_at %></p>
+          <p>
+            <%= comment.text %>
+          </p>
+          <% if @current_user != nil && (@current_user.is_admin? || @current_user.id == comment.user_id) %>
+            <%= link_to 'Delete', comment_path, :method => :delete, :data => {:confirm => 'Are you sure?'} %>
+          <% end %>
+      </div>
+    </div>
   <% end %>
-</ul>
+</div>
+
+
 
 <% if @current_user.present? %>
   <%= render :partial => 'comment_form' %>

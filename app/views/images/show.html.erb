@@ -2,6 +2,7 @@
 
 <%= link_to 'Back to images', images_path, :class => 'btn btn-default' %>
 
+
 <% if @current_user.present? && (@image.user_id != @current_user.id) %>
   <% unless @current_user.library.images.include? @image %>
     <%= link_to "/images/#{ @image.id }/add_to_library", :method => :post, :class => "btn btn-success" do %>
@@ -15,6 +16,7 @@
   <% end %>
 <% end %>
 
+
 <% unless @current_user == nil %>
   <% if @current_user.is_admin? %>
     <%= link_to 'Delete image', @image, :method => 'delete', :data => {:confirm => 'Are you sure, admin?'}, :class => "btn btn-danger" %>
@@ -23,7 +25,7 @@
 <!-- logic below probably shouldn't be there...fix this -->
 
 <% @author = User.find(@image.user_id) %>
-<p>Posted by: <a href="<%= "/users/#{@image.user_id}" %>"><%= @author.name %></a></p>
+<p class="image-author">Posted by: <a href="<%= "/users/#{@image.user_id}" %>"><%= @author.name %></a></p>
 
 <p>Source: <%= @image.source %></p>
 <!-- seems to work, try to break this -->
@@ -34,6 +36,11 @@
   <img src="<%= @image.image_url %>" alt="">
 <% end %>
 
-
-<h2>Description:</h2>
-<p><%= @image.description %></p>
+<div class="panel panel-default image-description-panel">
+  <div class="panel-heading">
+    <h3 class="panel-title">Description</h3>
+  </div>
+  <div class="panel-body">
+      <p><%= @image.description %></p>
+  </div>
+</div>

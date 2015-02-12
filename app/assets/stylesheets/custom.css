@@ -27,6 +27,10 @@ body {
 
 img {
   width: 100%;
+
+}
+
+.img-grid {
   border: 4px solid #1ABC9C;
   border-radius: 3px;
 }
@@ -144,4 +148,24 @@ body > .main-content { height: auto; min-height: 95%; }
 
 .edit-profile {
   margin-top: 10em;
+}
+
+.post-nav {
+  margin-bottom: 15px;
+}
+
+.comment-box {
+  word-wrap: break-word;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  background-color: #fff;
+}
+
+.image-description-panel {
+  margin-top: 15px;
+}
+
+
+.image-author {
+  margin-top: 15px;
 }

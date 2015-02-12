@@ -39,7 +39,7 @@
     <% unless @user.id == @current_user.id %>
       <ul>
         <% @user.posts.each do |post| %>
-          <li><%= link_to post.title, "/posts/#{post.id}" %></li>
+          <li><%= link_to post.title, "/posts/#{ post.id }" %></li>
         <% end %>
       </ul>
     <% end %>
@@ -47,18 +47,18 @@
 </div>
 
 <div class="col-md-5 bio-box">
-<div class="panel panel-default">
-  <div class="panel-heading">
-    <h3 class="panel-title">Bio</h3>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">Bio</h3>
+    </div>
+    <div class="panel-body">
+      <% if @user.bio == nil %>
+        <p>Edit your profile to add a bio.</p>
+      <% else %>
+        <p><%= @user.bio %></p>
+      <% end %>
+    </div>
   </div>
-  <div class="panel-body">
-    <% if @user.bio == nil %>
-      <p>Edit your profile to add a bio.</p>
-    <% else %>
-      <p><%= @user.bio %></p>
-    <% end %>
-  </div>
-</div>
 </div>
 
 
