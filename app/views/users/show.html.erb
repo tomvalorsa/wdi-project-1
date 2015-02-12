@@ -34,15 +34,17 @@
 
     <% if @user.posts.length == 0 %>
       <p>This user has not submitted any code snippets</p>
-    <% end %>
-
-    <% unless @user.id == @current_user.id %>
+    <% else %>
       <ul>
         <% @user.posts.each do |post| %>
           <li><%= link_to post.title, "/posts/#{ post.id }" %></li>
         <% end %>
       </ul>
     <% end %>
+
+
+
+
   </div>
 </div>
 

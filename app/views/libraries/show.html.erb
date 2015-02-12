@@ -1,13 +1,14 @@
 <div class="row text-center">
-  <h1><%= @current_user.name %>'s Library</h1>
+  <h1><%= @current_user.name.capitalize %>'s Library</h1>
 </div>
 
 <div class="row">
-  <h2>My Posts</h2>
+  <h2>Code Snippets</h2>
 </div>
 
 <div class="row">
-  <h3>Code Snippets</h3>
+<div class="col-md-6">
+  <h3>My Posts</h3>
   <% unless @user_posts.empty? %>
     <ul>
       <% @user_posts.each do |post| %>
@@ -16,15 +17,33 @@
     </ul>
   <% else %>
     <p>You haven't created any posts.</p>
-    <a href="<%= new_post_path %>">Create a new post</a>
+    <a href="<%= new_post_path %>">Add a new post</a>
   <% end %>
 </div>
-
-<div class="row">
-  <h3>Images</h3>
+<div class="col-md-6">
+  <h3>Favourited Posts</h3>
+  <% unless @favourite_posts.empty? %>
+    <ul>
+      <% @favourite_posts.each do |post| %>
+        <li><%= link_to post.title, "/library/posts/#{ post.id }" %></li>
+      <% end %>
+    </ul>
+  <% else %>
+    <p>You haven't favourited any posts.</p>
+    <a href="<%= posts_path %>">Browse posts</a>
+  <% end %>
+  </div>
 </div>
 
 
+
+
+<div class="row">
+  <h2>Images</h2>
+</div>
+
+
+  <h3>My Images</h3>
 
   <% unless @user_images.empty? %>
   <div class="row-custom">
@@ -39,32 +58,15 @@
   <% else %>
   <div class="row">
     <p>You haven't uploaded any images.</p>
-    <a href="<%= new_image_path %>">Create a new image post</a>
+    <a href="<%= new_image_path %>">Add a new image post</a>
     </div>
   <% end %>
 
 
-<div class="row">
-  <h2>My Favourites</h2>
-</div>
 
-<div class="row">
-  <h3>Code Snippets</h3>
-  <% unless @favourite_posts.empty? %>
-    <ul>
-      <% @favourite_posts.each do |post| %>
-        <li><%= link_to post.title, "/library/posts/#{ post.id }" %></li>
-      <% end %>
-    </ul>
-  <% else %>
-    <p>You haven't favourited any posts.</p>
-    <a href="<%= posts_path %>">Browse posts</a>
-  <% end %>
-</div>
 
-<div class="row">
-  <h3>Images</h3>
-</div>
+  <h3>Favourited Images</h3>
+
 
 
   <% unless @favourite_images.empty? %>
