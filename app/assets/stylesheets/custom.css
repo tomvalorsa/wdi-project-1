@@ -121,6 +121,7 @@ body > .main-content { height: auto; min-height: 95%; }
 
 .sign-up-container {
   background-color: #815BA4;
+  box-shadow: 5px 5px 0 #633B88;
   border-radius: 5px;
   width: 400px;
   margin-top: 7em;
@@ -216,6 +217,7 @@ body > .main-content { height: auto; min-height: 95%; }
 
 .formbox {
   background-color: #815BA4;
+  box-shadow: 5px 5px 0 #633B88;
   margin-top: 4em;
   padding: 2em;
   border-radius: 5px;
