@@ -1,28 +1,64 @@
-<h1>This is <%= @user.name %>'s profile page</h1>
+<div class="rule"></div>
 
-<h2>Info:</h2>
+<div class="row">
+  <h1 class="col-md-9 profile-name"><%= @user.name.capitalize %></h1>
+  <% if @current_user.is_admin? %>
+  <%= link_to 'Delete user', @user, :method => 'delete', :data => {:confirm => 'Are you sure, admin?'}, :class => "btn btn-danger col-md-1 profile-delete" %>
+  <% end %>
 
-<% if @current_user.id == @user.id %>
-  <%= link_to 'Edit profile', edit_user_path, :class => "btn btn-warning" %>
-<% end %>
-
-<% if @current_user.is_admin? %>
-  <%= link_to 'Delete user', @user, :method => 'delete', :data => {:confirm => 'Are you sure, admin?'}, :class => "btn btn-danger" %>
-<% end %>
-
-<p>Name: <%= @user.name %></p>
-<p>Email: <%= @user.email %></p>
-<p>Image:</p>
-<img src="<%= @user.image %>" alt="">
-<p>Bio:</p>
-<p><%= @user.bio %></p>
-
-<% unless @user.id == @current_user.id %>
-  <h3>Posts created by <%= @user.name %>:</h3>
-  <ul>
-    <% @user.posts.each do |post| %>
-      <li><%= link_to post.title, "/posts/#{post.id}" %></li>
+    <% if @current_user.id == @user.id %>
+      <% if @current_user.is_admin? %>
+        <%= link_to 'Edit profile', edit_user_path, :class => "btn btn-warning col-md-1 profile-edit" %>
+      <% else %>
+        <%= link_to 'Edit profile', edit_user_path, :class => "btn btn-warning col-md-2 profile-edit" %>
+      <% end %>
     <% end %>
-  </ul>
-<% end %>
+
+
+</div>
+
+<div class="rule"></div>
+<br>
+<div class="row">
+  <div class="col-md-5">
+  <% if @user.image == nil %>
+    <p>You haven't got a profile picture. Edit your profile to add one.</p>
+  <% else %>
+    <img src="<%= @user.image %>" alt="" class="img-circle">
+  <% end %>
+  </div>
+
+  <div class="col-md-6 col-md-offset-1">
+    <!-- does the list of posts have to go in here? -->
+    <h3>Snippets created by <%= @user.name.capitalize %>:</h3>
+
+    <% if @user.posts.length == 0 %>
+      <p>This user has not submitted any code snippets</p>
+    <% end %>
+
+    <% unless @user.id == @current_user.id %>
+      <ul>
+        <% @user.posts.each do |post| %>
+          <li><%= link_to post.title, "/posts/#{post.id}" %></li>
+        <% end %>
+      </ul>
+    <% end %>
+  </div>
+</div>
+
+<div class="col-md-5 bio-box">
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Bio</h3>
+  </div>
+  <div class="panel-body">
+    <% if @user.bio == nil %>
+      <p>Edit your profile to add a bio.</p>
+    <% else %>
+      <p><%= @user.bio %></p>
+    <% end %>
+  </div>
+</div>
+</div>
+
 

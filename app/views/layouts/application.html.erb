@@ -9,17 +9,17 @@
 </head>
 <body>
 
-  <nav class="navbar navbar-default">
+  <nav class="navbar navbar-default header-nav">
     <div class="container-fluid">
 
 
       <!-- add in the logo and make it a link to the homepage -->
         <ul class="nav navbar-nav">
-          <li><%= link_to 'View posts', posts_path %></li>
+          <li class="nav-link"><%= link_to 'View posts', posts_path %></li>
           <li><%= link_to 'View images', images_path %></li>
 
           <% if  @current_user.present? && @current_user.is_admin? %>
-            <li><%= link_to 'View users', users_path %></li>
+            <li><%= link_to 'View users', users_path, :class => "nav-link" %></li>
           <% end %>
         </ul>
 
@@ -46,17 +46,20 @@
   </nav>
 
 
-  <div class="container footer-bottom">
+  <div class="container main-content">
     <%= yield %>
   </div>
 
-
-    <footer class="container-fluid">
-      <%= link_to 'About', about_path %>
-      <%= link_to 'Development Log', dev_log_path %>
-      <p>Designed and produced by Tom Valorsa</p>
-    </footer>
-
+  <div id="footer" class="text-center">
+    <div class="container-fluid">
+      <p>
+        <%= link_to 'About', about_path %>
+        |
+        <%= link_to 'Development Log', dev_log_path %>
+      </p>
+      <p>&copy; 2015 Tom Valorsa</p>
+    </div>
+  </div>
 
 </body>
 </html>

@@ -1,12 +1,27 @@
-Hey put a form here
+<div class="col-md-12 text-center">
+  <h2>Edit <%= @current_user.name.capitalize %>'s profile</h2>
+</div>
 
-<p>Edit <%= @current_user.name %>'s profile:</p>
-<%= form_for @current_user do |f| %>
-  <%= f.label :image %>
-  <%= f.url_field :image %>
 
-  <%= f.label :bio %>
-  <%= f.text_area :bio %>
+<div class="edit-profile">
+  <%= form_for @current_user, :html => { :class => "form-horizontal" } do |f| %>
+    <div class="form-group">
+      <%= f.label :image, :class => "col-sm-2 control-label" %>
+        <div class="col-sm-10">
+        <%= f.url_field :image, :class => "form-control" %>
+        </div>
+    </div>
 
-  <%= f.submit %>
-<% end %>
+    <div class="form-group">
+      <%= f.label :bio, :class => "col-sm-2 control-label" %>
+      <div class="col-sm-10">
+      <%= f.text_area :bio, :class => "form-control" %>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-sm-offset-2 col-sm-10">
+        <%= f.submit 'Update profile', :class => "btn btn-primary" %>
+      </div>
+    </div>
+  <% end %>
+</div>

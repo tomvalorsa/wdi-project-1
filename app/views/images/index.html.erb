@@ -1,7 +1,9 @@
 <% unless @current_user.present? %>
   <div class="jumbotron text-center">
-    <h1>snip{it}</h1>
-
+    <h1>
+      <span class="snip">snip</span><span class="braces">{</span><span class="it">it</span><span class="braces">}</span>
+    </h1>
+    <p>(logo here)</p>
     <p>Get inspired by user-shared code, ready for deployment on your own site.</p>
     <!-- button below could take user to about page which has a link for sign up -->
     <p>

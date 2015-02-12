@@ -3,6 +3,10 @@
 <h2>BUGS</h2>
 <ul>
   <li>when editing an image, the url value doesn't stay in the form (when updating)</li>
+  <li>thought this was a bug, but it turns out to be a benefit</li>
+  <li>the way it's set up means that if there is an image url, it will show that, if not it will show the uploaded image (as the user will only be doing one kind)</li>
+  <li>this means that if the user gave a url initially and they edit to upload one, the url is removed, so there cannot be 2 images in the system at the same time</li>
+  <li>if the url did remain there then it would override the uploaded image</li>
 </ul>
 
 <h3>Fixes Needed:</h3>
