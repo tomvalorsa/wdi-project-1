@@ -7,7 +7,7 @@ Users can submit their own work and add the work of others to their library, kee
 place.
 
 To get this up and running, simply visit the following URL and make an account:
-https://tom-project-1.herokuapp.com/
+https://snipit-app.herokuapp.com/
 
 Usage:
 
@@ -16,15 +16,15 @@ You can leave comments on pens and add both pens and images to your library.
 
 To view your library, simply click on your username on the right of the navbar and choose 'My Library' from the
 dropdown menu. Here you will be able to see all of the posts you've made and the ones you've favourited. Comments
-are disabled in the library view of the post so that all you keep in your library is the code itself and a 
+are disabled in the library view of the post so that all you keep in your library is the code itself and a
 brief description of what it does.
 
 To submit your own pen, choose 'Add Snippet' from the dropdown menu and paste in a URL from Codepen.io.
 To submit an image, choose 'Add Image' from the dropdown menu and either paste in an image URL or upload an image
-from your computer. 
+from your computer.
 Both of these can be edited or deleted from your library, so long as you were the user who posted the content.
 
-You can also view and edit your profile page by choosing 'My Profile' from the dropdown menu and adding an image 
+You can also view and edit your profile page by choosing 'My Profile' from the dropdown menu and adding an image
 URL or updating your bio. Your profile is public and other users will be able to see the contributions you have
 made to the site.
 
