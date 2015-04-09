@@ -9,6 +9,15 @@ place.
 To get this up and running, simply visit the following URL and make an account:
 (https://snipit-app.herokuapp.com/).
 
+##Technologies used:
+- Ruby on Rails
+- Carrierwave
+- Bcrypt
+- AWS Image Upload
+- Bootstrap
+- Animate.css
+- Postgres
+
 ##Usage:
 
 Once you've made an account you can browse the images or pens by choosing an icon from the left of the navbar.
